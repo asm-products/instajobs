@@ -1,2 +1,2 @@
 # instajobs
-Get hired now!
+Get hired instantly!
