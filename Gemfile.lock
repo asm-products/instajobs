@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/mongoid/mongoid.git
-  revision: 5aceb68b39662aa16ce74b8e8a56b258d6db4cfe
+  revision: 467d10f4d0fdd708e6419c04c45e4263341459fc
   specs:
     mongoid (4.0.2)
       activemodel (~> 4.0)
@@ -46,6 +46,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    angular-rails-templates (0.2.0)
+      railties (>= 3.1)
+      sprockets (~> 2)
+      tilt
     arel (6.0.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -87,6 +91,7 @@ GEM
       thor (~> 0.19.1)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    hike (1.2.3)
     i18n (0.7.0)
     jbuilder (2.2.13)
       activesupport (>= 3.0.0, < 5)
@@ -178,8 +183,11 @@ GEM
       rubyzip (~> 1.0)
       websocket (~> 1.0)
     spring (1.3.6)
-    sprockets (3.1.0)
+    sprockets (2.12.3)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
       rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
     sprockets-rails (2.3.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -205,6 +213,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angular-rails-templates
   bower-rails
   bson_ext
   byebug
@@ -225,5 +234,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   selenium-webdriver
   spring
+  sprockets (= 2.12.3)
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

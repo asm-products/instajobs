@@ -1,4 +1,5 @@
 asset 'angular'
+asset 'angular-route'
 asset 'bootstrap-sass-official'
 
 #vim: ft=ruby
