@@ -1,0 +1,3 @@
+instajobs = angular.module('instajobs', [
+
+])
