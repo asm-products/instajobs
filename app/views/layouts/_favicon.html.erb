@@ -1,0 +1,12 @@
+<% %w(57 60 72 76 114 120 144 152 180).each do |size| %>
+      <%= favicon_link_tag "apple-icon-#{size}x#{size}.png", rel: 'apple-touch-icon', type: 'image/png', sizes: "#{size}x#{size}" %>
+    <% end %>
+    <%= favicon_link_tag "android-icon-192x192.png", rel: "icon", type: "image/png", sizes: "192x192" %>
+    <% %w(16 32 96).each do |size| %>
+      <%= favicon_link_tag "favicon-#{size}x#{size}.png", rel: 'icon', type: 'image/png', sizes: "#{size}x#{size}" %>
+    <% end %>
+    <%= favicon_link_tag "manifest.json", rel: "manifest" %>
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="<%= asset_path('ms-icon-144x144.png') %>">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1">
