@@ -17,6 +17,6 @@ Using .. http://angular-rails.com as a base for getting some of the boilerplate 
 
 To build local : (If it doesn't work report the issue, and fix if you got one, or just edit this readme.)
 
-clone
-bundle
-rails s 
+## clone
+## bundle
+## rails s 
