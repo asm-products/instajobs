@@ -1,0 +1,40 @@
+.loginbox
+	.logo		
+		%img{:src => 'assets/img/logo.png'}
+	.nav
+		.signbtn
+			%a{:href => "#", :class => 'selected'}
+				Sign Up
+		.logbtn
+			%a{:href=>"#"}
+				Log In
+
+	.clearfix
+	.signupform
+		%form
+			%input.form-control{:placeholder => 'Name', :name => "name", :required=>""}
+			%br
+			%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email"}
+			%br
+			%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password"}
+			%br
+			%button.submitbtn{}
+				Create account
+			%hr
+				%button.fblogin
+					%i{:class=> "fa fa-facebook"}
+					%span
+						Sign Up with faceook
+	.loginform
+		%form
+			%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email"}
+			%br
+			%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password"}
+			%br
+			%button.submitbtn{}
+				Sign In
+			%hr
+				%button.fblogin
+					%i{:class=> "fa fa-facebook"}
+					%span
+						Login with faceook

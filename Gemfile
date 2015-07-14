@@ -29,10 +29,14 @@ gem 'sprockets', '2.12.3'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
-
+gem 'unicorn'
+gem 'bourbon'
+gem 'neat'
+gem 'refills'
+gem 'font-awesome-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'haml'
 gem 'bower-rails'
 gem 'angular-rails-templates'
 group :development, :test do
@@ -56,3 +60,4 @@ group :production, :staging do
   gem "rails_stdout_logging"
   gem "rails_serve_static_assets"
 end
+

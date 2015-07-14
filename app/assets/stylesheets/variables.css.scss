@@ -1,0 +1,7 @@
+$primary_color: #C11A2F;
+$font-family: $verdana;
+
+@mixin border-lr($color){
+	border-left: 1px solid $color;
+	border-right: 1px solid $color;
+}
