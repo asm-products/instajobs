@@ -24,7 +24,7 @@
 				%button.fblogin
 					%i{:class=> "fa fa-facebook"}
 					%span
-						Sign Up with faceook
+						Sign Up with Facebook
 	.loginform
 		%form
 			%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email", :required=>""}
@@ -37,4 +37,23 @@
 				%button.fblogin
 					%i{:class=> "fa fa-facebook"}
 					%span
-						Login with faceook
+						Login with Facebook
+#fb-root
+%script{:type => 'text/javascript'}
+	window.fbAsyncInit = function() {
+	FB.init({
+	appId      : '1136739806342246', // App ID
+	status     : true, // check login status
+	cookie     : true, // enable cookies to allow the server to access the session
+	xfbml      : true,  // parse XFBML
+	oauth      : true,
+	version    : 'v2.4',
+	});
+	};
+	(function(d){
+	var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement('script'); js.id = id; js.async = true;
+	js.src = "//connect.facebook.net/en_US/all.js";
+	ref.parentNode.insertBefore(js, ref);
+	}(document));

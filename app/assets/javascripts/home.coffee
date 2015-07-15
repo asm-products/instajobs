@@ -59,8 +59,46 @@ $("#loginbtn").click (event) ->
 		type: 'POST'
 		data: {email : email, password : password}
 		success: (response) ->
-			alert(response.result)
+			if response.result == "success"
+				window.location = "/dashboard"
+			else
+				alert(response.result)
+			return
 		error: (error) ->
 			alert(error)
 		setTimeout(setloginbtn, 2000)
+	return
+
+getUserInfo = (token) ->
+	FB.api '/me', {fields: ['email', 'name']}, (response) ->
+		#login
+		name = response.name
+		email = response.email
+		id = response.id
+		unless(email)
+			alert("email not fetched from facebook")
+			return
+		$(".fblogin").html("Connecting ..");
+		$.ajax
+			url: '/fb'
+			type: 'POST'
+			data: {email : email, name : name, id : id, access_token : token}
+			success: (response) -> 
+				if response.result == "success"
+					window.location = "/dashboard"
+				else
+					alert(response.result)
+				return
+			error: (error) ->
+				alert(error)
+		return
+
+$(".fblogin").click (event) ->
+	event.preventDefault();
+	FB.login (response) ->
+		if(response.authResponse)
+			getUserInfo(response.authResponse.accessToken)
+		else
+			alert("authorization failed")
+	, {scope: 'email'}	
 	return

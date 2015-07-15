@@ -11,6 +11,33 @@ class HomeController < ApplicationController
   
   end
 
+  def fb
+  	fbparam = fbparams(params)
+  	newsignup = false
+  	@u = User.where(:email => fbparam[:email]).first
+  	if @u
+  		@u.facebook_profile = FacebookProfile.new(:uid => fbparam[:id], :access_token => fbparam[:access_token])
+  	else
+  		@u = User.new
+  		@u.name = fbparam[:name]
+  		@u.email = fbparam[:email]
+  		@u.email_verified = true
+  		@u.password = SecureRandom.hex(6)
+  		@u.facebook_profile = FacebookProfile.new(:uid => fbparam[:id], :access_token => fbparam[:access_token])
+  		newsignup = true
+  	end
+  	if @u.save
+  		if newsignup
+  			# TODO move mailer to background queue
+		  	FbSignupMailer.password(@u).deliver
+  		end
+	  	session[:user_id] = @u.id
+			render :json => {result: "success"}
+  	else
+  		render :json => {result: "save error" + @u.errors.join(" ")}
+  	end
+  end
+
   def signup
   	sparams = signup_params(params)
   	@u = User.new()
@@ -21,9 +48,9 @@ class HomeController < ApplicationController
   		render :json => {result: "email already registered"}
   		return
   	end
-  	verify_token = SecureRandom.hex
+  	verify_token = SecureRandom.urlsafe_base64
   	while(User.where(:email_verify_token => verify_token).size != 0)
-  		verify_token = SecureRandom.hex
+  		verify_token = SecureRandom.urlsafe_base64
   	end
   	@u.email_verify_token = verify_token
   	if @u.save
@@ -48,7 +75,7 @@ class HomeController < ApplicationController
   		end
   		if @u.authenticate(pass)
   			session[:user_id] = @u.id
-  			redirect_to '/dashboard'
+  			render :json => {result: "success"}
   		else
   			render :json => {result: "password did not match"}
   		end
@@ -75,4 +102,9 @@ class HomeController < ApplicationController
   def login_params(params)
   	params.permit(:email, :password)
   end
+
+  def fbparams(params)
+  	params.permit(:email, :name, :id, :access_token)
+  end
+
 end

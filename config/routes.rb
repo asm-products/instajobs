@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   match '/login' => 'home#login', via: [:post]
   match '/signup' => 'home#signup', via: [:post]
   match '/verify' => 'home#verify', via: [:get]
+  match '/fb' => 'home#fb', via: [:post]
+  match '/dashboard' => 'dashboard#index', via: [:get]
 end
