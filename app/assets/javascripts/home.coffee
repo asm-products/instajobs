@@ -1,6 +1,9 @@
 setsignbtn = () ->
 	$("#signupbtn").html("Create account");
 
+setloginbtn = () ->
+	$("#loginbtn").html("Sign In");
+
 $('.signbtn a:first-child').click () ->
 	$('.signupform').fadeIn()
 	$('.loginform').fadeOut()
@@ -41,3 +44,23 @@ $('#signupbtn').click (event) ->
 			setTimeout(setsignbtn, 2000);
 	return
 
+$("#loginbtn").click (event) ->
+	event.preventDefault();
+	$("#loginbtn").html("Logging you in ...")
+	values = $(".loginform form:first-child input");
+	email = values[0].value
+	password = values[1].value
+	unless(email and password)
+		$("#loginbtn").html("Empty fields!!")
+		setTimeout(loginbtn, 1000)
+		return
+	$.ajax
+		url: '/login'
+		type: 'POST'
+		data: {email : email, password : password}
+		success: (response) ->
+			alert(response.result)
+		error: (error) ->
+			alert(error)
+		setTimeout(setloginbtn, 2000)
+	return
