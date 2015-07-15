@@ -5,3 +5,16 @@ $font-family: $verdana;
 	border-left: 1px solid $color;
 	border-right: 1px solid $color;
 }
+
+@mixin button-insta($color){
+	border: none;
+	padding: 1em;
+	background-color: $color;
+	color: #fff;
+	cursor: pointer;
+	transition: ease 0.2s all;
+	&:hover{
+		background-color: #fff;
+		color: $color;
+	}
+}

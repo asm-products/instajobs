@@ -46,8 +46,8 @@
 			font-family: $font_family;
 		}
 		.submitbtn{
-			margin-left: 14em;
-			@include button(shiny, $primary_color);
+			margin-left: 14.5em;
+			@include button-insta($primary_color);
 		}
 		.fblogin{
 			margin-left: 13.3em;
@@ -75,8 +75,8 @@
 			font-family: $font_family;
 		}
 		.submitbtn{
-			margin-left: 15em;
-			@include button(shiny, $primary_color);
+			@include button-insta($primary_color);
+			margin-left: 15.3em;
 		}
 		.fblogin{
 			margin-left: 12.8em;

@@ -1,0 +1,27 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "app/models"
+		},
+		{
+			"path": "app/assets/javascripts",
+		},
+		{
+			"path": "app/assets/stylesheets"
+		},
+		{
+			"path" : "app/controllers"
+		},
+		{
+			"path" : "app/views"
+		}
+	],
+	"settings":
+	{
+		"tab_size" : 2
+	}
+}

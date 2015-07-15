@@ -14,11 +14,11 @@
 		%form
 			%input.form-control{:placeholder => 'Name', :name => "name", :required=>""}
 			%br
-			%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email"}
+			%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email",:required=>""}
 			%br
-			%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password"}
+			%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password", :required=>""}
 			%br
-			%button.submitbtn{}
+			%button.submitbtn#signupbtn{}
 				Create account
 			%hr
 				%button.fblogin
@@ -27,11 +27,11 @@
 						Sign Up with faceook
 	.loginform
 		%form
-			%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email"}
+			%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email", :required=>""}
 			%br
-			%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password"}
+			%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password", :required=>""}
 			%br
-			%button.submitbtn{}
+			%button.submitbtn#loginbtn{}
 				Sign In
 			%hr
 				%button.fblogin
