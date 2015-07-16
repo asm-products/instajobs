@@ -32,7 +32,7 @@
 	.signupform{
 		margin-top: 2em;
 		padding: 3em;
-		@include border-lr($primary_color);
+		@include border($primary_color);
 		.form-control::-webkit-input-placeholder{
 			font-family: $font_family;
 		}
@@ -59,7 +59,7 @@
 		display: none;
 		margin-top: 2em;
 		padding: 3em;
-		@include border-lr($primary_color);
+		@include border($primary_color);
 		.form-control::-webkit-input-placeholder{
 			font-family: $font_family;
 		}

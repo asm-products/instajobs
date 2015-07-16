@@ -1,1 +1,4 @@
-app = angular.module 'instajob', [ 'templates']
+do ->
+	app = angular.module 'instajob', [ 'templates']
+	
+	return

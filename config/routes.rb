@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   match '/signup' => 'home#signup', via: [:post]
   match '/verify' => 'home#verify', via: [:get]
   match '/fb' => 'home#fb', via: [:post]
-  match '/logout' => 'home#connect', :logout => true, via: [:get]
+  match '/logout' => 'home#logout', via: [:get]
 
   # dashboard route
   match '/dashboard' => 'dashboard#index', via: [:get]
