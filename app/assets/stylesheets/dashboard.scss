@@ -1,3 +1,23 @@
 // Place all the styles related to the Dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.mainNav{
+	button.navbar-toggle{
+		background-color: #000;
+		span.icon-bar{
+			background-color: $primary_color;
+		}
+	}
+	.navbar-collapse.collapse{
+		a{
+			cursor: pointer;
+			font-family: $font-family;
+			color: #000;
+			// border-right: 1px solid #000;
+			&:hover{
+				color: $primary_color;
+				background-color: #fff;
+			}
+		}
+	}
+}

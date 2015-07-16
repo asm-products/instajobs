@@ -8,7 +8,13 @@ class HomeController < ApplicationController
   end
 
   def connect
-  
+    @logout = params.include?(:logout) ? true : false;
+    if @logout
+      session[:user_id] = nil;
+    end
+    unless session[:user_id].nil?
+      redirect_to '/dashboard'
+    end
   end
 
   def fb

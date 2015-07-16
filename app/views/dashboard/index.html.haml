@@ -1,1 +1,9 @@
-= session[:user_id]
+%div{"ng-app" => 'instajob'}
+	%div{"id" => "username", "style" => "display:none"}
+		= @user_name
+	%home-nav
+
+	.container.mainContainer{"ng-controller" => 'mainCtrl'}
+		.row{'ui-view' => ''}
+
+	.container.footer

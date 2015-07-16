@@ -1,10 +1,6 @@
 @import "bourbon";
 @import "neat";
 @import "variables";
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
-@import 'login';
-
-/*
- *= require font-awesome
- */
+@import 'connect';
+@import 'dashboard';
+@import 'bootstrap/dist/css/bootstrap';
