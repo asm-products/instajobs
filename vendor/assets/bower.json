@@ -4,6 +4,9 @@
     "angular": "latest",
     "angular-route": "latest",
     "angular-ui-router": "latest",
-    "bootstrap": "latest"
+    "bootstrap": "latest",
+    "angular-google-maps": "latest"
+  },
+  "resolutions": {
   }
 }

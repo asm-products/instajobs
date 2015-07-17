@@ -2,5 +2,6 @@ asset 'angular'
 asset 'angular-route'
 asset 'angular-ui-router'
 asset 'bootstrap'
+asset 'angular-google-maps'
 
 #vim: ft=ruby
