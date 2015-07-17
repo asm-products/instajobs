@@ -67,7 +67,7 @@
 			%hr
 			%input{'ng-model' => 'jname', "placeholder" => 'Search Job Title', :class => "form-control"}
 			%br
-			%div.jobdiv{"ng-repeat" => 'job in showjobs | filter : jname'}
+			%div.jobdiv{"ng-repeat" => 'job in showjobs track by $index | filter : jname'}
 				.row
 					.col-md-5
 						%h4.jtitle
