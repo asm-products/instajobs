@@ -34,7 +34,7 @@
 						%span
 							in {{selectedc.name}}
 				.col-md-3
-					%button.instabtn{"ng-click" => ""}
+					%button.instabtn{"ng-click" => "njf = !njf"}
 						New Job
 			%br
 			.row{"ng-show" => "njf"}
@@ -52,16 +52,18 @@
 						%br
 							.row
 								.col-md-6
-									%input.form-control{"ng-model" => "newjob.lat", "placeholder" => "Latitude", "type "=> "number", "ng-required" => "true", "ng-value" => "lat"}
+									%input.form-control{"ng-model" => "newjob.lat", "ng-show" => "!autoloc", "placeholder" => "Latitude", "type "=> "number"}
+									%p{"ng-show" => "autoloc"}
+										Latitude - {{lat}}
 								.col-md-6
-									%input.form-control{"ng-model" => "newjob.lng", "placeholder" => "Longitude", "type "=> "number", "ng-required" => "true", "ng-value" => "lng"}
+									%input.form-control{"ng-model" => "newjob.lng", "ng-show" => "!autoloc", "placeholder" => "Longitude", "type "=> "number"}
+									%p{"ng-show" => 'autoloc'}
+										Longitutde - {{lng}}
 						%br
-							{{lng}}
-							{{lat}}
-							%input{"type" => "checkbox", "ng-click" => "findLatLng()"}
+							%input{"type" => "checkbox", "ng-click" => "toggleLatLng()"}
 								Use My Location
 						%br
-						%input.instabtn{"type" => "submit", "ng-value" => "ncfbtnval", "ng-disabled" => "!newcform.$valid"}
+						%input.instabtn{"type" => "submit", "ng-value" => "ncfbtnval", "ng-disabled" => "!newjform.$valid"}
 			%hr
 			%input{'ng-model' => 'jname', "placeholder" => 'Search Job Title', :class => "form-control"}
 			%br
@@ -69,10 +71,10 @@
 				.row
 					.col-md-5
 						%h4.jtitle
-							{{job[0].title}}
+							{{job.title}}
 					.col-md-5
 						%p.datetime
-							Created at - {{job[0].created_at | date : format : timezone}}
+							Created at - {{job.created_at | date : format : timezone}}
 					.col-md-1.elink
 						%span.glyphicon.glyphicon-pencil
 					.col-md-1.elink
@@ -80,18 +82,18 @@
 				.row
 					.col-md-12
 						%p
-							Description - {{job[0].description}}
+							Description - {{job.description}}
 				.row
 					.col-md-6
 						%p
-							Salary - {{job[0].salary}}
+							Salary - {{job.salary}}
 					.col-md-6
 						%p
-							Hours - {{job[0].hours}}
+							Hours - {{job.hours}}
 				.row
 					.col-md-6
 						%p
-							Location - Lat({{job[0].location[0]}}), Lng({{job[0].location[1]}})
+							Location - Lat({{job.location[0]}}), Lng({{job.location[1]}})
 					.col-md-6
 						%p
-							Users Liked - {{job[0].user_ids.length}}
+							Users Liked - {{job.user_ids.length}}
