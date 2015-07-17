@@ -36,6 +36,32 @@
 				.col-md-3
 					%button.instabtn{"ng-click" => ""}
 						New Job
+			%br
+			.row{"ng-show" => "njf"}
+				.col-md-12
+					%form{"role" => "form", :novalidate => '', "ng-model" => "newjob", "name" => "newjform", "ng-submit" => "newjform.$valid && createJob(newjob)"}
+						%input.form-control{"ng-model" => "newjob.title", "placeholder" => "Job Title", "ng-required" => "true"}
+						%br
+						%textarea.form-control{"ng-model" => "newjob.description", "placeholder" => "Description", "ng-required" => "true"}
+						%br
+						.row
+							.col-md-6
+								%input.form-control{"ng-model" => "newjob.salary", "placeholder" => "Salary", "type "=> "number", "ng-required" => "true"}
+							.col-md-6
+								%input.form-control{"ng-model" => "newjob.hours", "placeholder" => "Hours", "type" => "number", "ng-required" => "true"}
+						%br
+							.row
+								.col-md-6
+									%input.form-control{"ng-model" => "newjob.lat", "placeholder" => "Latitude", "type "=> "number", "ng-required" => "true", "ng-value" => "lat"}
+								.col-md-6
+									%input.form-control{"ng-model" => "newjob.lng", "placeholder" => "Longitude", "type "=> "number", "ng-required" => "true", "ng-value" => "lng"}
+						%br
+							{{lng}}
+							{{lat}}
+							%input{"type" => "checkbox", "ng-click" => "findLatLng()"}
+								Use My Location
+						%br
+						%input.instabtn{"type" => "submit", "ng-value" => "ncfbtnval", "ng-disabled" => "!newcform.$valid"}
 			%hr
 			%input{'ng-model' => 'jname', "placeholder" => 'Search Job Title', :class => "form-control"}
 			%br
@@ -47,9 +73,10 @@
 					.col-md-5
 						%p.datetime
 							Created at - {{job[0].created_at | date : format : timezone}}
-					.col-md-2.elink
+					.col-md-1.elink
 						%span.glyphicon.glyphicon-pencil
-
+					.col-md-1.elink
+						%span.glyphicon.glyphicon-trash
 				.row
 					.col-md-12
 						%p
