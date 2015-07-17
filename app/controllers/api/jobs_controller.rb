@@ -34,7 +34,7 @@ class Api::JobsController < ApplicationController
 		@job.save
 		@company.jobs << @job
 		if @company.save
-			render :json => {"result" => "success"}
+			render :json => {"result" => "success", "id" => @job.id}
 		else
 			render :json => {"result" => "error"}
 		end

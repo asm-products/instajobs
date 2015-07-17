@@ -28,6 +28,7 @@ do ->
 			$http.post('/api/companies', newcompany).then (response) ->
 				if response.data.result == "success"
 					$scope.ncfbtnval = "Created";
+					newcompany._id = response.data.id;
 					$scope.mycompanies.push(newcompany);
 				else
 					$scope.ncfbtnval = "Error";
@@ -48,6 +49,7 @@ do ->
 				if response.data.result == "success"
 					$scope.njfbtnval = "Created"
 					newjob.location = [newjob.lat, newjob.lng]
+					newjob.id = response.data.id;
 					$scope.myjobs.push(newjob);
 					$scope.showjobs.push(newjob);
 				else

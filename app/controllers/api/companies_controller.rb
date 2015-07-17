@@ -16,12 +16,12 @@ class Api::CompaniesController < ApplicationController
 		cp = createparams
 		@user_id = session[:user_id]["$oid"]
 		@user = User.find(@user_id)
-		c = Company.new
-		c.name = cp[:name]
-		c.url = cp[:url]
-		@user.companies << c
+		@c = Company.new
+		@c.name = cp[:name]
+		@c.url = cp[:url]
+		@user.companies << @c
 		if @user.save
-			render :json => {result: "success"}
+			render :json => {result: "success", id: @c.id}
 		else
 			render :json => {result: "error"}
 		end
