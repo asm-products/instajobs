@@ -17,6 +17,7 @@ do ->
   			]
   		}
   	};
+    # $stateProvider.state 'job'
    $stateProvider.state 'postjob', {
       url : '/postjob',
       templateUrl: 'postjob.html',

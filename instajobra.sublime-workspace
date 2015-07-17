@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"comp",
+				"companyid"
+			],
+			[
+				"co",
+				"company"
+			],
+			[
+				"sho",
+				"showjobs"
+			],
+			[
+				"new",
+				"newjob"
+			],
+			[
+				"show",
+				"showPosition"
+			],
+			[
+				"my",
+				"myjobs"
+			],
+			[
+				"Co",
+				"Company"
+			],
+			[
+				"cre",
+				"createparams"
+			],
+			[
+				"com",
+				"company_id"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"USE",
+				"user_id"
+			],
+			[
+				"Comp",
+				"companies"
+			],
+			[
+				"tem",
+				"templateUrl"
+			],
+			[
+				"stat",
+				"stateProvider"
+			],
+			[
 				"u",
 				"username"
 			],
@@ -18,10 +82,6 @@
 			[
 				"err",
 				"errors"
-			],
-			[
-				"new",
-				"newsignup"
 			],
 			[
 				"email",
@@ -74,14 +134,6 @@
 			[
 				"sign",
 				"signbtn"
-			],
-			[
-				"mar",
-				"margin-left"
-			],
-			[
-				"fon",
-				"font_family"
 			],
 			[
 				"font",
@@ -211,62 +263,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/assets/javascripts/dashboard.coffee",
-			"settings":
-			{
-				"buffer_size": 719,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/angular/controllers/jobsCtrl.js",
-			"settings":
-			{
-				"buffer_size": 164,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/api/jobs_controller.rb",
-			"settings":
-			{
-				"buffer_size": 73,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/angular/controllers/homeNavCtrl.coffee",
-			"settings":
-			{
-				"buffer_size": 128,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/angular/controllers/mainCtrl.coffee",
-			"settings":
-			{
-				"buffer_size": 216,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/templates/home_nav.html.haml",
-			"settings":
-			{
-				"buffer_size": 777,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/home.coffee",
-			"settings":
-			{
-				"buffer_size": 2751,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -336,12 +332,17 @@
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets",
-		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/controllers",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/directives",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/api",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/templates",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/controllers",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/controllers/api",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/mailers",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/views",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/views/dashboard",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/views/home",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/views/signup_mailer",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/public",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/public/assets",
@@ -355,7 +356,9 @@
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/vendor/assets/bower_components/bootstrap",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/vendor/assets/bower_components/bootstrap/dist",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/vendor/assets/bower_components/bootstrap/dist/css",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/vendor/assets/bower_components/bootstrap/dist/fonts",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/vendor/assets/bower_components/bootstrap/dist/js",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/controllers",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/directives",
@@ -367,29 +370,36 @@
 	],
 	"file_history":
 	[
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/controllers/mainCtrl.coffee",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/controllers/homeNavCtrl.coffee",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/stylesheets/dashboard.scss",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/controllers/api/jobs_controller.rb",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/templates/postjob.html.haml",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/dashboard.coffee",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/controllers/postJobCtrl.coffee",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/controllers/jobsCtrl.coffee",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/controllers/api/companies_controller.rb",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/models/job.rb",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/models/company.rb",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/templates/home_nav.html.haml",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/home.coffee",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/vendor/assets/bower_components/bootstrap/dist/css/bootstrap.css",
+		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/templates/jobs.html.haml",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/config/routes.rb",
 		"<untitled 0>",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/application.js",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/ng_progress_lite.js",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/controllers/home_controller.rb",
-		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/controllers/homeNavCtrl.coffee",
-		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/home.coffee",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/views/layouts/application.html.erb",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/stylesheets/connect.css.scss",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/stylesheets/variables.css.scss",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/controllers/dashboard_controller.rb",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/views/dashboard/index.html.haml",
-		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/dashboard.coffee",
-		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/controllers/mainCtrl.coffee",
-		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/stylesheets/dashboard.scss",
-		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/templates/home_nav.html.haml",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/javascripts/angular/directives/home_nav.coffee",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/config/application.rb",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/assets/stylesheets/application.css.scss",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/Gemfile",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/Bowerfile",
-		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/models/job.rb",
-		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/models/company.rb",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/vendor/assets/bower.json",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/vendor/assets/bower_components/angular-route/angular-route.min.js",
 		"/Users/asheshvidyut/Code/assembly/instajobrailsang/app/views/home/connect.html.haml",
@@ -487,14 +497,7 @@
 		"/Users/asheshvidyut/Code/classverse-web/resources/views/mouse-track/index.blade.php",
 		"/Users/asheshvidyut/Code/classverse-web/storage/logs/click_logs-15-06-27.log",
 		"/Users/asheshvidyut/Code/classverse-web/storage/logs/click_logs-15-06-29.log",
-		"/Users/asheshvidyut/Downloads/Inspiration for Text Styles and Hover Effects_files/linkstyles.css",
-		"/Users/asheshvidyut/Code/Tympanus Codrops/Hover Effects/kumaya.html",
-		"/Users/asheshvidyut/Code/Tympanus Codrops/Hover Effects/yaku.html",
-		"/Users/asheshvidyut/Code/classverse-web/resources/views/welcome-bak.blade.php",
-		"/Users/asheshvidyut/Code/Tympanus Codrops/Hover Effects/t.html",
-		"/Users/asheshvidyut/Code/classverse-web/public/js/vendor/heatmap.js",
-		"/Users/asheshvidyut/Code/classverse-web/storage/click_logs-15-06-27.log",
-		"/Users/asheshvidyut/Code/classverse-web/resources/views/mouse-track"
+		"/Users/asheshvidyut/Downloads/Inspiration for Text Styles and Hover Effects_files/linkstyles.css"
 	],
 	"find":
 	{
@@ -515,6 +518,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"newjob",
+			"newcom",
+			"showj",
+			"show",
+			"myjobs",
+			"newjob",
+			"compan",
+			"ng-value",
+			"new",
+			"a",
+			"glyp",
+			"font",
+			"dateTime",
 			"windo",
 			"border",
 			"window",
@@ -620,311 +636,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/assets/javascripts/dashboard.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 719,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								690,
-								690
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 33
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/assets/javascripts/angular/controllers/jobsCtrl.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 164,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								153,
-								153
-							]
-						],
-						"settings":
-						{
-							"highlight_line": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": true,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_insert",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 60
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/controllers/api/jobs_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 73,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								63,
-								63
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": true,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_insert",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 0
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/assets/javascripts/angular/controllers/homeNavCtrl.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
-							"vintage":
-							{
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 0
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/assets/javascripts/angular/controllers/mainCtrl.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 216,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								215,
-								215
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 7
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/assets/javascripts/templates/home_nav.html.haml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 777,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								776,
-								776
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 17
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/assets/javascripts/home.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2751,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2369,
-								2369
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 2
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 1198.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -977,16 +690,56 @@
 		"selected_items":
 		[
 			[
+				"job",
+				"models/job.rb"
+			],
+			[
+				"jobsc",
+				"controllers/api/jobs_controller.rb"
+			],
+			[
 				"jobsco",
 				"controllers/api/jobs_controller.rb"
 			],
 			[
-				"homen",
-				"javascripts/angular/controllers/homeNavCtrl.coffee"
+				"com",
+				"models/company.rb"
+			],
+			[
+				"jobs",
+				"controllers/api/jobs_controller.rb"
+			],
+			[
+				"companies",
+				"controllers/api/companies_controller.rb"
+			],
+			[
+				"company",
+				"models/company.rb"
+			],
+			[
+				"dash",
+				"stylesheets/dashboard.scss"
+			],
+			[
+				"companies_",
+				"controllers/api/companies_controller.rb"
+			],
+			[
+				"das",
+				"javascripts/dashboard.coffee"
+			],
+			[
+				"compnies_co",
+				"controllers/api/companies_controller.rb"
 			],
 			[
 				"route",
 				"instajobrailsang/config/routes.rb"
+			],
+			[
+				"homen",
+				"javascripts/angular/controllers/homeNavCtrl.coffee"
 			],
 			[
 				"appli",
@@ -1015,10 +768,6 @@
 			[
 				"mainc",
 				"javascripts/angular/controllers/mainCtrl.coffee"
-			],
-			[
-				"das",
-				"javascripts/dashboard.coffee"
 			],
 			[
 				"application",
@@ -1081,10 +830,6 @@
 				"models/company.rb"
 			],
 			[
-				"job",
-				"models/job.rb"
-			],
-			[
 				"bower.json",
 				"instajobrailsang/vendor/assets/bower.json"
 			],
@@ -1099,10 +844,6 @@
 			[
 				"da",
 				"stylesheets/dashboard.scss"
-			],
-			[
-				"dash",
-				"javascripts/dashboard.coffee"
 			],
 			[
 				"connec",
@@ -1159,10 +900,6 @@
 			[
 				"sublim",
 				"instajobrailsang/instajobra.sublime-project"
-			],
-			[
-				"com",
-				"app/models/company.rb"
 			],
 			[
 				"faceboo",
@@ -1462,30 +1199,6 @@
 			],
 			[
 				"studiocontro",
-				"Controllers/StudioController.php"
-			],
-			[
-				"studiocon",
-				"Controllers/StudioController.php"
-			],
-			[
-				"studioro",
-				"views/search-studio/studio-row.blade.php"
-			],
-			[
-				"locatino",
-				"Models/Location.php"
-			],
-			[
-				"populate",
-				"classverse-web/app/Console/Commands/PopulateRoles.php"
-			],
-			[
-				"kerne",
-				"classverse-web/app/Console/Kernel.php"
-			],
-			[
-				"studioconto",
 				"Controllers/StudioController.php"
 			]
 		],

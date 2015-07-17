@@ -1,0 +1,28 @@
+.container.allJobs
+	.row
+		.col-md-12
+			.div.jobdiv.col-md-3{"ng-repeat" => "job in jobs track by $index"}
+				.row
+					.col-md-12.text-center
+						%h4
+							{{job.title}}
+				.row.descdiv
+					.col-md-12
+						%p
+							Job Description
+						%p
+							{{job.description}}
+				.row
+					.col-md-6
+						%p
+							Salary - {{job.salary}} 
+					.col-md-6
+						%p
+							Hours - {{job.hours}}
+				.row.like
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-up
+
+					.col-md-2.col-md-offset-8
+						%span.glyphicon.glyphicon-thumbs-down
+
