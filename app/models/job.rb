@@ -1,6 +1,7 @@
 class Job
   include Mongoid::Document
   field :title, type: String
+  field :description, type: String
   field :salary, type: Float
   field :location, type: Array
   field :hours, type: Integer

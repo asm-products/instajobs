@@ -1,0 +1,70 @@
+.container.postJob
+	.row
+		.col-md-5
+			.row
+				.col-md-7
+					%h4
+						My Companies
+				.col-md-5
+					%button.instabtn{"ng-click" => "ncf = !ncf"}
+						New Company
+			%br
+			.row{"ng-show" => "ncf"}
+				.col-md-12
+					%form{"role" => "form", :novalidate => '', "ng-model" => "newcompany", "name" => "newcform", "ng-submit" => "newcform.$valid && createCompany(newcompany)"}
+						%input.form-control{"ng-model" => "newcompany.name", "placeholder" => "Company Name", "ng-required" => "true"}
+						%br
+						%input.form-control{"ng-model" => "newcompany.url", "placeholder" => "Website", "ng-required" => "true"}
+						%br
+						%input.instabtn{"type" => "submit", "ng-value" => "ncfbtnval", "ng-disabled" => "!newcform.$valid"}
+
+			%hr
+			%input{'ng-model' => 'cname', "placeholder" => 'Search Company Name', :class => "form-control"}
+			%br
+			%div{"ng-repeat" => 'company in mycompanies | filter : cname'}
+				%a.cname{'ng-click' => "updateJobs(company)"}
+					{{company.name}}
+		.col-md-7
+			.row
+				.col-md-9
+					%h4{'ng-hide' => 'selectedc'}
+						All Jobs
+					%h4{'ng-show' => 'selectedc'}
+						My Jobs
+						%span
+							in {{selectedc.name}}
+				.col-md-3
+					%button.instabtn{"ng-click" => ""}
+						New Job
+			%hr
+			%input{'ng-model' => 'jname', "placeholder" => 'Search Job Title', :class => "form-control"}
+			%br
+			%div.jobdiv{"ng-repeat" => 'job in showjobs | filter : jname'}
+				.row
+					.col-md-5
+						%h4.jtitle
+							{{job[0].title}}
+					.col-md-5
+						%p.datetime
+							Created at - {{job[0].created_at | date : format : timezone}}
+					.col-md-2.elink
+						%span.glyphicon.glyphicon-pencil
+
+				.row
+					.col-md-12
+						%p
+							Description - {{job[0].description}}
+				.row
+					.col-md-6
+						%p
+							Salary - {{job[0].salary}}
+					.col-md-6
+						%p
+							Hours - {{job[0].hours}}
+				.row
+					.col-md-6
+						%p
+							Location - Lat({{job[0].location[0]}}), Lng({{job[0].location[1]}})
+					.col-md-6
+						%p
+							Users Liked - {{job[0].user_ids.length}}

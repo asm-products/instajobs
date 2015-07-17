@@ -21,3 +21,37 @@
 		}
 	}
 }
+.postJob{
+	font-family: $font-family;
+	.instabtn{
+		@include button-insta($primary_color);
+	}
+	a{
+		color: $primary_color;
+	}
+	.cname{
+		cursor: pointer;
+		&:hover{
+			color: $primary_color;
+		}
+	}
+	.jobdiv{
+		@include border($primary_color);
+		margin-bottom: 2em;
+		padding: 1em;
+	}
+	.datetime{
+		text-transform: italic;
+		color: gray;
+		font-size: small;
+	}
+	.jtitle{
+		color: $primary_color;
+	}
+	.elink{
+		cursor: pointer;
+		&:hover{
+			color: $primary_color;
+		}
+	}
+}
