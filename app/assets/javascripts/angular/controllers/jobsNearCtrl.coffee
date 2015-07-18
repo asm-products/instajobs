@@ -61,5 +61,13 @@ do ->
 						$scope.loading = false;
 						$scope.jobs = response.data;
 						initailizeMap();
+
+		$scope.markersEvents = 
+			"mouseover" : (gMarker, eventname, model) ->
+				$(".infowindow").fadeIn();
+				$(".infowindow").html(model.title);
+			"mouseout" : (gMarker, eventname, model) ->
+				$(".infowindow").fadeOut();
+
 	]
 	return

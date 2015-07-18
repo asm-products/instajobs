@@ -1,9 +1,11 @@
 .container.jobsNear
+	.infowindow			
+
 	.row.loadinggif{"ng-show" => "loading"}
 		%img{"src" => "reload.gif"}
 	%ui-gmap-google-map{"center" => 'map.center', "zoom" => 'map.zoom'}
 		%ui-gmap-marker{"coords" => "marker.coords", "idKey" => "marker.id", "options" => "marker.options"}
-		%ui-gmap-markers{"models" => "jobs", "coords" => "'coords'", "options" => "markers.options", "idKey" => "id"}
+		%ui-gmap-markers{"models" => "jobs", "coords" => "'coords'", "options" => "markers.options", "idKey" => "id", "events" => "markersEvents"}
 	%br
 	.row
 		.col-md-4

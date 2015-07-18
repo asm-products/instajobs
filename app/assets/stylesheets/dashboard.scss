@@ -122,4 +122,15 @@
 	.title{
 		color: $primary_color;
 	}
+	.infowindow{
+		display: none;
+		text-transform: uppercase;
+		position: absolute;
+		top: 30%;
+		left: 45%;
+		z-index: 555;
+		background-color: lighten(#000, 10%);
+		color: $primary_color;
+		padding: 1em;
+	}
 }
