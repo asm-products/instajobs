@@ -13,6 +13,12 @@ class Api::JobsController < ApplicationController
 				c.jobs.each{|j| @jobs << j}
 			end
 		end
+		if params.include?(:lat)
+			lat = params[:lat]
+			lng = params[:lng]
+			radius = params[:radius]
+			@jobs = Job.geo_near([lat.to_f, lng.to_f]).max_distance(radius.to_f)
+		end
 		render :json => @jobs
 	end
 

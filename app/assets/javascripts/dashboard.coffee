@@ -1,5 +1,5 @@
 do ->
-	app = angular.module 'instajob', [ 'ngProgressLite', 'templates', 'ui.router'];
+	app = angular.module 'instajob', [ 'ngProgressLite', 'templates', 'ui.router', 'uiGmapgoogle-maps', 'ui.slider'];
 	app.config ['$httpProvider', '$stateProvider', '$urlRouterProvider', ($httpProvider, $stateProvider, $urlRouterProvider) -> 
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
     return

@@ -1,3 +1,40 @@
 .container.jobsNear
-	.row.text-center{"ng-show" => "loading"}
+	.row.loadinggif{"ng-show" => "loading"}
 		%img{"src" => "reload.gif"}
+	%ui-gmap-google-map{"center" => 'map.center', "zoom" => 'map.zoom'}
+		%ui-gmap-marker{"coords" => "marker.coords", "idKey" => "marker.id", "options" => "marker.options"}
+		%ui-gmap-markers{"models" => "jobs", "coords" => "'coords'", "options" => "markers.options", "idKey" => "id"}
+	%br
+	.row
+		.col-md-4
+			Radius - {{radius}}
+		.col-md-8
+			%div{"ui-slider" => "slider.options", "min" => 5, "max" => "100", "ng-model" => "radius"}
+	%br
+	.row
+		.col-md-12
+			.div.jobdiv.col-md-3{"ng-repeat" => "job in jobs track by $index"}
+				.row.title
+					.col-md-12.text-center
+						%h4
+							{{job.title}}
+				.row.descdiv
+					.col-md-12
+						%p
+							Job Description
+						%p
+							{{job.description}}
+				.row
+					.col-md-6
+						%p
+							Salary - {{job.salary}} 
+					.col-md-6
+						%p
+							Hours - {{job.hours}}
+				.row.like
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-up
+
+					.col-md-2.col-md-offset-8
+						%span.glyphicon.glyphicon-thumbs-down
+

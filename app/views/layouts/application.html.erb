@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/favicon' %>
+	<%= javascript_include_tag '//maps.googleapis.com/maps/api/js?sensor=false' %>
+
 </head>
 <body>
 	<%= yield %>

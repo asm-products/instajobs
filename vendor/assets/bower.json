@@ -5,8 +5,10 @@
     "angular-route": "latest",
     "angular-ui-router": "latest",
     "bootstrap": "latest",
-    "angular-google-maps": "latest"
-  },
-  "resolutions": {
+    "angular-google-maps": "latest",
+    "underscore": "latest",
+    "lodash": "latest",
+    "angular-ui-slider": "latest",
+    "jquery-ui": "latest"
   }
 }
