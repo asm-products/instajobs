@@ -65,6 +65,11 @@
 		margin: 0.5em;
 		padding: 1em;
 		min-height: 25em;
+		&:hover{
+			@include border($primary_color);
+			cursor: pointer;
+			@include shadow();
+		}
 	}
 	.datetime{
 		text-transform: italic;
@@ -103,6 +108,11 @@
 		margin: 0.5em;
 		padding: 1em;
 		min-height: 25em;
+		&:hover{
+			@include border($primary_color);
+			cursor: pointer;
+			@include shadow();
+		}
 	}
 	@media (min-width: 992px){
 		.col-md-3 {
