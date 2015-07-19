@@ -100,11 +100,13 @@ test:
         max_retries: 1
         retry_interval: 0
 production:
-  host: <%= ENV['MONGOID_HOST'] %>
-  port: <%= ENV['MONGOID_PORT'] %>
-  username: <%= ENV['MONGOID_USERNAME'] %>
-  password: <%= ENV['MONGOID_PASSWORD'] %>
-  database: <%= ENV['MONGOID_DATABASE'] %>
+  sessions: 
+    default: 
+      hosts:
+        - <%= ENV['MONGOID_HOST'] %>:<%= ENV['MONGOID_PORT'] %>
+      username: <%= ENV['MONGOID_USERNAME'] %>
+      password: <%= ENV['MONGOID_PASSWORD'] %>
+      database: <%= ENV['MONGOID_DATABASE'] %>
   # slaves:
   #   - host: slave1.local
   #     port: 27018

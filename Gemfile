@@ -56,6 +56,7 @@ group :development, :test do
   gem "selenium-webdriver"
 end
 gem "foreman"
+gem "figaro"
 group :production, :staging do 
   gem "rails_12factor"
   gem "rails_stdout_logging"
