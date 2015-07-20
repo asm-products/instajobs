@@ -64,7 +64,7 @@
 		@include border(#000);
 		margin: 0.5em;
 		padding: 1em;
-		min-height: 25em;
+		min-height: 30em;
 		&:hover{
 			@include border($primary_color);
 			cursor: pointer;
@@ -78,7 +78,7 @@
 	}
 	@media (min-width: 992px){
 		.col-md-3 {
-		  width: 31%;
+		  width: 25%;
 		}
 	}
 	.like{
@@ -90,6 +90,44 @@
 	}
 	.descdiv{
 		min-height: 15em;
+	}
+	.matches{
+		padding: 0;
+		padding-right: 1em;
+		border-radius: 0.2em;
+		@include button-alljobs($primary_color);
+		p{
+			float: right;
+			padding-top: 0.6em;
+		}
+	}
+	.savedjobs{
+		border-radius: 0.2em;
+		padding: 0;
+		padding-right: 1em;
+		@include button-alljobs($nav-back);
+		p{
+			float: right;
+			padding-top: 0.6em;
+		}
+	}
+	.matchescount{
+		padding-top: 0.7em;
+		height: 2.7em;
+		width: 3em;
+		color: #fff;
+		float: left;
+		margin-right: 1em;
+		background-color: $primary_color;
+	}
+	.savedjobscount{
+		padding-top: 0.7em;
+		height: 2.7em;
+		width: 3em;
+		color: #fff;
+		float: left;
+		margin-right: 1em;
+		background-color: $nav-back;	
 	}
 }
 .jobsNear{

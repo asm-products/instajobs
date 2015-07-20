@@ -1,6 +1,24 @@
 .container.allJobs
-	.row
+	.row.text-center
 		.col-md-12
+			%h4
+				Job Listings
+	.row.text-center
+		.col-md-12
+			%button.matches
+				%div.matchescount
+					%span.glyphicon.glyphicon-user
+					4
+				%p
+					Matches
+			%button.savedjobs
+				%div.savedjobscount
+					%span.glyphicon.glyphicon-briefcase
+					4
+				%p
+					Saved Jobs
+	.row
+		.col-md-12.col-md-offset-1
 			.div.jobdiv.col-md-3{"ng-repeat" => "job in jobs track by $index"}
 				.row.title
 					.col-md-12.text-center
