@@ -1,43 +1,52 @@
-.loginbox
-	.logo		
-		%img{:src => 'assets/images/logo.png'}
-	.nav
-		.signbtn
-			%a{:href => "#", :class => 'selected'}
-				Sign Up
-		.logbtn
-			%a{:href=>"#"}
-				Log In
-
-	.clearfix
-	.signupform
-		%form
-			%input.form-control{:placeholder => 'Name', :name => "name", :required=>""}
-			%br
-			%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email",:required=>""}
-			%br
-			%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password", :required=>""}
-			%br
-			%button.submitbtn#signupbtn{}
-				Create account
-			%hr
-				%button.fblogin
-					%i{:class=> "fa fa-facebook"}
-					%span
-						Sign Up with Facebook
-	.loginform
-		%form
-			%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email", :required=>""}
-			%br
-			%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password", :required=>""}
-			%br
-			%button.submitbtn#loginbtn{}
-				Sign In
-			%hr
-				%button.fblogin
-					%i{:class=> "fa fa-facebook"}
-					%span
-						Login with Facebook
+.mainNav	
+	%nav.navbar{:role => 'navigation'}
+		.navbar-header
+			%a{:href => '#'}
+				%img{:src => 'assets/images/blue-logo.png'}
+			%button.navbar-toggle{'data-toggle' => 'collapse', 'data-target' => '#navbar-collapse'}
+				%span.sr-only
+					Toggle Navigation
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+		.navbar-collapse.collapse{'id' => 'navbar-collapse'}
+			%ul.nav.navbar-nav.navbar-right
+				%li
+					%a{'href' => '#', "id" => "signuphref", 'class' => "selected"}
+						Sign Up
+				%li
+					%a{'href' => '#', "id" => "loginhref"}
+						Login
+.wrap
+	.loginbox
+		.signupform
+			%form
+				%input.form-control{:placeholder => 'Name', :name => "name", :required=>""}
+				%br
+				%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email",:required=>""}
+				%br
+				%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password", :required=>""}
+				%br
+				%button.submitbtn#signupbtn{}
+					Create account
+				%hr
+					%button.fblogin
+						%i{:class=> "fa fa-facebook"}
+						%span
+							Sign Up with Facebook
+		.loginform
+			%form
+				%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email", :required=>""}
+				%br
+				%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password", :required=>""}
+				%br
+				%button.submitbtn#loginbtn{}
+					Sign In
+				%hr
+					%button.fblogin
+						%i{:class=> "fa fa-facebook"}
+						%span
+							Login with Facebook
 #fb-root
 %script{:type => 'text/javascript'}
 	window.fbAsyncInit = function() {

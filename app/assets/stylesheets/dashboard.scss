@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .mainNav{
+	background-color: $nav-back;
 	button.navbar-toggle{
 		background-color: #000;
 		span.icon-bar{
@@ -12,11 +13,10 @@
 		a{
 			cursor: pointer;
 			font-family: $font-family;
-			color: #000;
+			color: #fff;
 			// border-right: 1px solid #000;
 			&:hover{
 				color: $primary_color;
-				background-color: #fff;
 			}
 		}
 	}

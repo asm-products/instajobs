@@ -1,38 +1,18 @@
+.wrap{
+	background: url("images/header.jpg") no-repeat center center fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-postion: center center;
+	width: auto;
+	margin-top: -1.5em;
+	height: 35.5em;
+}
 .loginbox{
 	min-width: 43.15em;
 	width: 43.15em;
 	@include outer-container;
-	.logo{
-		text-align: center;
-	}
-	.nav{
-		@include span-columns(12 of 12);
-		margin: auto;
-		a{
-			font-size: 2em;
-			font-family: $font_family;
-			color: #000;
-			text-decoration: none;
-			&.selected{
-				color: $primary_color;
-			}
-		}
-		.signbtn{
-			@include span-columns(6 of 12);
-			text-align: center;
-		}
-		.logbtn{
-			text-align: center;
-			@include span-columns(6 of 12);
-		}
-	}
-	.clearfix{
-		clear: both;
-	}
 	.signupform{
-		margin-top: 2em;
 		padding: 3em;
-		@include border($primary_color);
 		.form-control::-webkit-input-placeholder{
 			font-family: $font_family;
 		}
@@ -57,9 +37,7 @@
 	}
 	.loginform{
 		display: none;
-		margin-top: 2em;
 		padding: 3em;
-		@include border($primary_color);
 		.form-control::-webkit-input-placeholder{
 			font-family: $font_family;
 		}

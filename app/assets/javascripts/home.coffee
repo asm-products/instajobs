@@ -5,16 +5,18 @@ $(document).ready () ->
 	setloginbtn = () ->
 		$("#loginbtn").html("Sign In");
 
-	$('.signbtn a:first-child').click () ->
-		$('.signupform').fadeIn()
-		$('.loginform').fadeOut()
+	$('#signuphref').click () ->
+		$('.loginform').fadeOut () ->
+			$('.signupform').fadeIn()
+			return
 		$('.logbtn a:first-child').removeClass('selected');
 		$('.signbtn a:first-child').addClass('selected');
 		return 
 
-	$('.logbtn a:first-child').click () ->
-		$('.signupform').fadeOut()
-		$('.loginform').fadeIn()
+	$('#loginhref').click () ->
+		$('.signupform').fadeOut () -> 
+			$('.loginform').fadeIn()
+			return
 		$('.signbtn a:first-child').removeClass('selected');
 		$('.logbtn a:first-child').addClass('selected');
 		return 
