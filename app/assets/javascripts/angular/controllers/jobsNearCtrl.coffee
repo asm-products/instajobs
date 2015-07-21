@@ -1,6 +1,6 @@
 do ->
 	app = angular.module 'instajob'
-	app.controller 'jobsNearCtrl', ["$http", "$scope", "uiGmapGoogleMapApi", ($http, $scope, uiGmapGoogleMapApi) ->
+	app.controller 'jobsNearCtrl', ["$http", "$scope", "uiGmapGoogleMapApi", "$rootScope", ($http, $scope, uiGmapGoogleMapApi, $rootScope) ->
 		$scope.loading = true;
 		$scope.lat = null;
 		$scope.lng = null;
@@ -48,7 +48,7 @@ do ->
 					latitude: j.location[0],
 					longitude: j.location[1],
 				}
-				j.description = j.description.substring(0, Math.min(j.description.lenght, 240))
+				j.description = j.description.substring(0, Math.min(j.description.lenght, 140))
 				# console.log(j.coords)
 		
 		$scope.slider = 'options':
@@ -75,5 +75,16 @@ do ->
 				$(".infowindow").html("Me");
 			"mouseout" : (gMarker, eventname, model) ->
 				$(".infowindow").fadeOut();
+
+		$scope.addJob = (job) ->
+			$http({url: '/api/addJob', params: {job_id: job._id["$oid"]}}).then (response) ->
+				if response.data.result == "success"
+					$rootScope.user_jobcount = parseInt($rootScope.user_jobcount) + 1;
+					alert("Added to Saved Jobs")
+		$scope.removeJob = (job) ->
+			$http({url: '/api/removeJob', params: {job_id: job._id["$oid"]}}).then (response) ->
+				if response.data.result == "success"
+					$rootScope.user_jobcount = parseInt($rootScope.user_jobcount) - 1;
+					alert("Added to Saved Jobs")
 	]
 	return
