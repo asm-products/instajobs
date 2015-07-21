@@ -95,6 +95,32 @@ class Api::JobsController < ApplicationController
 		end
 	end
 
+	def addJob
+		@user_id = session[:user_id]["$oid"]
+		@user = User.find(@user_id)
+		@job = Job.find(params[:job_id])
+		if @user.jobs.include?(@job)
+			render :json => {"result" => "already added"}
+		else
+			@user.jobs << @job;
+			@user.save;
+			render :json => {"result" => "success"}
+		end
+	end
+
+	def removeJob
+		@user_id = session[:user_id]["$oid"]
+		@user = User.find(@user_id)
+		@job = Job.find(params[:job_id])
+		if @user.jobs.include?(@job)
+			@user.jobs.delete(@job)
+			@user.save
+			render :json => {"result" => "success"}
+		else
+			render :json => {"result" => "job not saved"}
+		end
+	end
+
 	private
 	def check_login
 		if session[:user_id].nil?

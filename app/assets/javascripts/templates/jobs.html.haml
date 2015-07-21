@@ -14,7 +14,7 @@
 			%button.savedjobs
 				%div.savedjobscount
 					%span.glyphicon.glyphicon-briefcase
-					4
+					{{$root.user_jobcount}}
 				%p
 					Saved Jobs
 	.row
@@ -22,11 +22,11 @@
 			.div.jobdiv.col-md-3{"ng-repeat" => "job in jobs track by $index"}
 				.row.like
 					.col-md-2
-						%span.glyphicon.glyphicon-thumbs-up
+						%span.glyphicon.glyphicon-thumbs-up{"ng-click" => "addJob(job)"}
 					.col-md-7.text-center
 						%img{:src => "assets/images/1.jpg"}
 					.col-md-2
-						%span.glyphicon.glyphicon-thumbs-down
+						%span.glyphicon.glyphicon-thumbs-down{"ng-click" => "removeJob(job)"}
 				.row.title
 					.col-md-12.text-center
 						%h4

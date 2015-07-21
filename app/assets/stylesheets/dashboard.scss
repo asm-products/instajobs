@@ -61,7 +61,7 @@
 		@include border(#000);
 		margin: 0.5em;
 		padding: 1em;
-		min-height: 30em;
+		min-height: 37em;
 		&:hover{
 			@include border($nav-back);
 			cursor: pointer;

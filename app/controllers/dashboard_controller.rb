@@ -6,6 +6,7 @@ class DashboardController < ApplicationController
 		@user_id = session[:user_id]["$oid"]
 		@user = User.find(@user_id)
 		@user_name = @user.name
+		@user_jobcount = @user.jobs.count
 	end
 
 	private 

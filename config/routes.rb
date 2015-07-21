@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     end
     resources :jobs do
     end
+    match '/addJob' => "jobs#addJob", via: [:get]
+    match '/removeJob' => "jobs#removeJob", via: [:get]
   end
 
 end

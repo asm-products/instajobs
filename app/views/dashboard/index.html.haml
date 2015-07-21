@@ -1,6 +1,8 @@
 %div{"ng-app" => 'instajob'}
 	%div{"id" => "username", "style" => "display:none"}
 		= @user_name
+	%div{"id" => "userjobsc", "style" => "display:none"}
+		= @user_jobcount
 	%home-nav
 
 	.container.mainContainer{"ng-controller" => 'mainCtrl'}
