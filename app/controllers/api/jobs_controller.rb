@@ -73,6 +73,26 @@ class Api::JobsController < ApplicationController
 		end
 	end
 
+	def destroy
+		dp = deleteparams(params)
+		@job = Job.find(dp[:id].to_s)
+		@companyid = dp[:companyid]
+		@user_id = session[:user_id]["$oid"]
+		@company = Company.find(@companyid)
+		unless @company.user_id.to_s == @user_id
+			render :json => {"result" => "not authorized"} 
+		end
+		unless @job
+			render :json => {"result" => "job not found"}
+			return
+		end
+		if @job.destroy
+			render :json => {"result" => "success"}
+		else
+			render :json => {"result" => "error"}
+		end
+	end
+
 	private
 	def check_login
 		if session[:user_id].nil?
@@ -86,6 +106,10 @@ class Api::JobsController < ApplicationController
 
 	def createparams(params)
 		params.permit(:title, :description, :salary, :hours, :lat, :lng, :companyid)
+	end
+
+	def deleteparams(params)
+		params.permit(:id, :companyid)
 	end
 
 end

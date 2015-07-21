@@ -109,5 +109,15 @@ do ->
 					$timeout ()->
 						$scope.enjfbtnval = "Update"
 					,2000
+
+		$scope.delete = (job) ->
+			job.companyid = job.company_id["$oid"]
+			$http({url: '/api/jobs/'+job._id["$oid"], method: 'DELETE', params: {companyid: job.companyid}}).then (response) ->
+				if response.data.result == "success"
+					delete job.companyid
+					ind = $scope.myjobs.indexOf(job);
+					$scope.myjobs.splice(ind, 1)
+					ind = $scope.showjobs.indexOf(job);
+					$scope.showjobs.splice(ind, 1)
 	]
 	return
