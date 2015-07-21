@@ -36,6 +36,7 @@ class Api::JobsController < ApplicationController
 		@job.description = cp[:description]
 		@job.salary = cp[:salary]
 		@job.hours = cp[:hours]
+		@job.responsibility = cp[:responsibility]
 		@job.location = [cp[:lat], cp[:lng]]
 		@job.created_at = Time.now
 		@job.save
@@ -65,6 +66,7 @@ class Api::JobsController < ApplicationController
 		@job.description = up[:description]
 		@job.salary = up[:salary]
 		@job.hours = up[:hours]
+		@job.responsibility = up[:responsibility]
 		@job.location = [up[:lat], up[:lng]]
 		if @job.save
 			render :json => {"result" => "success"}
@@ -101,11 +103,11 @@ class Api::JobsController < ApplicationController
 	end
 
 	def updateparams(params)
-		params.permit(:id, :title, :description, :salary, :hours, :lat, :lng, :companyid)
+		params.permit(:id, :title, :description, :salary, :hours, :lat, :lng, :companyid, :responsibility)
 	end
 
 	def createparams(params)
-		params.permit(:title, :description, :salary, :hours, :lat, :lng, :companyid)
+		params.permit(:title, :description, :salary, :hours, :lat, :lng, :companyid, :responsibility)
 	end
 
 	def deleteparams(params)

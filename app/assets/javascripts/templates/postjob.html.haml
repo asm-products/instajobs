@@ -15,6 +15,8 @@
 							%br
 							%textarea.form-control{"ng-model" => "editjob.description", "placeholder" => "Description", "ng-required" => "true"}
 							%br
+							%textarea.form-control{"ng-model" => "editjob.responsibility", "placeholder" => "Responsibility", "ng-required" => "false"}
+							%br
 							.row
 								.col-md-6
 									%input.form-control{"ng-model" => "editjob.salary", "placeholder" => "Salary", "type "=> "number", "ng-required" => "true"}
@@ -82,6 +84,8 @@
 						%br
 						%textarea.form-control{"ng-model" => "newjob.description", "placeholder" => "Description", "ng-required" => "true"}
 						%br
+						%textarea.form-control{"ng-model" => "newjob.responsibility", "placeholder" => "Responsiblity", "ng-required" => "false"}
+						%br
 						.row
 							.col-md-6
 								%input.form-control{"ng-model" => "newjob.salary", "placeholder" => "Salary", "type "=> "number", "ng-required" => "true"}
@@ -121,6 +125,10 @@
 					.col-md-12
 						%p
 							Description - {{job.description}}
+				.row
+					.col-md-12
+						%p
+							Responsibility - {{job.responsibility}}
 				.row
 					.col-md-6
 						%p
