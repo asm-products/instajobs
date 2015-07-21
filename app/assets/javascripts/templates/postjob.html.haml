@@ -1,3 +1,41 @@
+%div.modal.fade{"tabindex" => -1, "role" => 'dialog', "id" => "myModal", "aria-labelledby" => "myModelLabel"}
+	%div{"class" => "modal-dialog", "role" => "document"}
+		%div{:class => "modal-content"}
+			%div{:class => "modal-header"}
+				%button{:type => "button", :class => "close", "data-dismiss" => "modal", "aria-label" => "Close"}
+					%span{"aria-hidden" => "true"}
+						&times;
+				%h4{:class => "modal-title"}
+					Edit - {{editjob.title}}
+			%div{:class => "modal-body"}
+				.row
+					.col-md-12
+						%form{"role" => "form", :novalidate => '', "ng-model" => "editjob", "name" => "editjform", "ng-submit" => "editjform.$valid && updateJob(editjob)"}
+							%input.form-control{"ng-model" => "editjob.title", "placeholder" => "Job Title", "ng-required" => "true"}
+							%br
+							%textarea.form-control{"ng-model" => "editjob.description", "placeholder" => "Description", "ng-required" => "true"}
+							%br
+							.row
+								.col-md-6
+									%input.form-control{"ng-model" => "editjob.salary", "placeholder" => "Salary", "type "=> "number", "ng-required" => "true"}
+								.col-md-6
+									%input.form-control{"ng-model" => "editjob.hours", "placeholder" => "Hours", "type" => "number", "ng-required" => "true"}
+							%br
+								.row
+									.col-md-6
+										%input.form-control{"ng-model" => "editjob.lat", "ng-show" => "!eautoloc", "placeholder" => "Latitude", "type "=> "number"}
+										%p{"ng-show" => "eautoloc"}
+											Latitude - {{lat}}
+									.col-md-6
+										%input.form-control{"ng-model" => "editjob.lng", "ng-show" => "!eautoloc", "placeholder" => "Longitude", "type "=> "number"}
+										%p{"ng-show" => 'eautoloc'}
+											Longitutde - {{lng}}
+							%br
+								%input{"type" => "checkbox", "ng-click" => "etoggleLatLng()"}
+									Use My Location
+							%br
+							%input.btn.btn-danger{"type" => "submit", "ng-value" => "enjfbtnval", "ng-disabled" => "!editjform.$valid"}
+
 .container.postJob
 	.row
 		.col-md-5
@@ -63,7 +101,7 @@
 							%input{"type" => "checkbox", "ng-click" => "toggleLatLng()"}
 								Use My Location
 						%br
-						%input.instabtn{"type" => "submit", "ng-value" => "ncfbtnval", "ng-disabled" => "!newjform.$valid"}
+						%input.instabtn{"type" => "submit", "ng-value" => "njfbtnval", "ng-disabled" => "!newjform.$valid"}
 			%hr
 			%input{'ng-model' => 'jname', "placeholder" => 'Search Job Title', :class => "form-control"}
 			%br
@@ -76,9 +114,9 @@
 						%p.datetime
 							Created at - {{job.created_at | date : format : timezone}}
 					.col-md-1.elink
-						%span.glyphicon.glyphicon-pencil
+						%span.glyphicon.glyphicon-pencil{"ng-click" => "edit(job)", "data-toggle" => "modal", "data-target" => "#myModal"}
 					.col-md-1.elink
-						%span.glyphicon.glyphicon-trash
+						%span.glyphicon.glyphicon-trash{"ng-click" => "delete(job)"}
 				.row
 					.col-md-12
 						%p

@@ -6,7 +6,7 @@
 	button.navbar-toggle{
 		background-color: #000;
 		span.icon-bar{
-			background-color: $primary_color;
+			background-color: $primary-color;
 		}
 	}
 	.navbar-collapse.collapse{
@@ -16,7 +16,7 @@
 			color: #fff;
 			// border-right: 1px solid #000;
 			&:hover{
-				color: $primary_color;
+				color: $primary-color;
 			}
 		}
 	}
@@ -24,15 +24,15 @@
 .postJob{
 	font-family: $font-family;
 	.instabtn{
-		@include button-insta($primary_color);
+		@include button-insta($primary-color);
 	}
 	a{
-		color: $primary_color;
+		color: $primary-color;
 	}
 	.cname{
 		cursor: pointer;
 		&:hover{
-			color: $primary_color;
+			color: $primary-color;
 		}
 	}
 	.jobdiv{
@@ -46,12 +46,12 @@
 		font-size: small;
 	}
 	.jtitle{
-		color: $primary_color;
+		color: $primary-color;
 	}
 	.elink{
 		cursor: pointer;
 		&:hover{
-			color: $primary_color;
+			color: $primary-color;
 		}
 	}
 }
@@ -72,10 +72,13 @@
 			color: #fff;
 		}
 		.more{
-			color: $primary_color;
+			color: $primary-color;
 			&:hover{
 				text-decoration: underline;
 			}
+		}
+		.info{
+			font-weight: bold;
 		}
 	}
 	.datetime{
@@ -88,9 +91,6 @@
 		  width: 25%;
 		}
 	}
-	.info{
-		font-weight: bold;
-	}
 	.like{
 		font-size: 20px;
 		background-color: $nav-back;
@@ -99,7 +99,7 @@
 			margin-top: 3em;
 			cursor: pointer;
 			color: #fff;
-			background-color: $primary_color;
+			background-color: $primary-color;
 			border-radius: 100%;
 			padding: 0.5em;
 		}
@@ -116,7 +116,7 @@
 		padding: 0;
 		padding-right: 1em;
 		border-radius: 0.2em;
-		@include button-alljobs($primary_color);
+		@include button-alljobs($primary-color);
 		p{
 			float: right;
 			padding-top: 0.6em;
@@ -139,7 +139,7 @@
 		color: #fff;
 		float: left;
 		margin-right: 1em;
-		background-color: $primary_color;
+		background-color: $primary-color;
 	}
 	.savedjobscount{
 		padding-top: 0.7em;
@@ -166,17 +166,27 @@
 		@include border(#000);
 		margin: 0.5em;
 		padding: 1em;
-		min-height: 25em;
+		min-height: 30em;
 		&:hover{
-			@include border($primary_color);
+			@include border($nav-back);
 			cursor: pointer;
 			@include shadow();
 		}
 		.title{
-			height: 4em;
 			background-color: $nav-back;
+			color: #fff;
+		}
+		.more{
+			color: $primary-color;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		.info{
+			font-weight: bold;
 		}
 	}
+
 	@media (min-width: 992px){
 		.col-md-3 {
 		  width: 31%;
@@ -184,9 +194,20 @@
 	}
 	.like{
 		font-size: 20px;
-		span:hover{
+		background-color: $nav-back;
+		margin-top: -0.7em;
+		span{
+			margin-top: 3em;
 			cursor: pointer;
-			color: $primary_color;
+			color: #fff;
+			background-color: $primary-color;
+			border-radius: 100%;
+			padding: 0.5em;
+		}
+		img{
+			width: 7em;
+			height: 7em;
+			border-radius: 100%;
 		}
 	}
 	.descdiv{
@@ -200,7 +221,7 @@
 		left: 45%;
 		z-index: 555;
 		background-color: lighten(#000, 10%);
-		color: $primary_color;
+		color: $primary-color;
 		padding: 0.5em 1em;
 	}
 }

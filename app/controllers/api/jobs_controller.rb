@@ -29,6 +29,7 @@ class Api::JobsController < ApplicationController
 		@user_id = session[:user_id]["$oid"]
 		unless @user_id == @user_company
 			render :json => {"result" => "error from here"}
+			return
 		end
 		@job = Job.new
 		@job.title = cp[:title]
@@ -46,12 +47,43 @@ class Api::JobsController < ApplicationController
 		end
 	end
 
+	def update
+		up = updateparams(params)
+		@job = Job.find(up[:id].to_s)
+		@companyid = up[:companyid]
+		@user_id = session[:user_id]["$oid"]
+		@company = Company.find(@companyid)
+		unless @company.user_id.to_s == @user_id
+			render :json => {"result" => "not authorized"}
+			return
+		end
+		unless @job
+			render :json => {"result" => "job not found"}
+			return
+		end
+		@job.title = up[:title]
+		@job.description = up[:description]
+		@job.salary = up[:salary]
+		@job.hours = up[:hours]
+		@job.location = [up[:lat], up[:lng]]
+		if @job.save
+			render :json => {"result" => "success"}
+		else
+			render :json => {"result" => "error"}
+		end
+	end
+
 	private
 	def check_login
 		if session[:user_id].nil?
 			redirect_to '/connect'
 		end
 	end
+
+	def updateparams(params)
+		params.permit(:id, :title, :description, :salary, :hours, :lat, :lng, :companyid)
+	end
+
 	def createparams(params)
 		params.permit(:title, :description, :salary, :hours, :lat, :lng, :companyid)
 	end

@@ -4,11 +4,15 @@ do ->
 		$scope.ncf = false; #show new company form
 		$scope.njf = false; #show new job form
 		$scope.ncfbtnval = "Create"; #button value of new company form
-		$scope.njfbtnval = ""; #button value of new company form
+		$scope.njfbtnval = "Create"; #button value of new company form
+		$scope.enjfbtnval = "Update"; #button value of new company form
 
 		$scope.autoloc = false;
+		$scope.eautoloc = false;
 		$scope.lat = null;
 		$scope.lng = null;
+
+		$scope.editjob = null;
 
 		$scope.myjobs = myjobs;
 		$scope.mycompanies = mycompanies;
@@ -76,6 +80,34 @@ do ->
 				alert("Browser not supported");
 			return true
 
-		
+		$scope.edit = (job) ->
+			$scope.editjob = job;
+			$scope.editjob.lat = $scope.editjob.location[0]
+			$scope.editjob.lng = $scope.editjob.location[1]
+
+		$scope.etoggleLatLng = () ->
+			if($scope.eautoloc)
+				$scope.eautoloc = false;
+			else
+				$scope.eautoloc = true;
+			if(navigator.geolocation)
+				navigator.geolocation.getCurrentPosition(showPosition);
+			else
+				alert("Browser not supported");
+			return true
+
+		$scope.updateJob = (editjob) ->
+			if($scope.eautoloc)
+				editjob.lat = $scope.lat;
+				editjob.lng = $scope.lng;
+			$scope.enjfbtnval = "Updating ...";
+			editjob.companyid = editjob.company_id["$oid"]
+			$http({url: '/api/jobs/'+editjob._id["$oid"], method: 'PATCH', data: editjob}).then (response) ->
+				if response.data.result == "success"
+					$scope.enjfbtnval = "Updated"
+					editjob.location = [editjob.lat, editjob.lng]
+					$timeout ()->
+						$scope.enjfbtnval = "Update"
+					,2000
 	]
 	return
