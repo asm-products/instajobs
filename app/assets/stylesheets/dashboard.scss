@@ -57,18 +57,25 @@
 }
 .allJobs{
 	font-family: $font-family;
-	.title{
-		color: $primary_color;
-	}
 	.jobdiv{
 		@include border(#000);
 		margin: 0.5em;
 		padding: 1em;
 		min-height: 30em;
 		&:hover{
-			@include border($primary_color);
+			@include border($nav-back);
 			cursor: pointer;
 			@include shadow();
+		}
+		.title{
+			background-color: $nav-back;
+			color: #fff;
+		}
+		.more{
+			color: $primary_color;
+			&:hover{
+				text-decoration: underline;
+			}
 		}
 	}
 	.datetime{
@@ -81,11 +88,25 @@
 		  width: 25%;
 		}
 	}
+	.info{
+		font-weight: bold;
+	}
 	.like{
 		font-size: 20px;
-		span:hover{
+		background-color: $nav-back;
+		margin-top: -0.7em;
+		span{
+			margin-top: 3em;
 			cursor: pointer;
-			color: $primary_color;
+			color: #fff;
+			background-color: $primary_color;
+			border-radius: 100%;
+			padding: 0.5em;
+		}
+		img{
+			width: 7em;
+			height: 7em;
+			border-radius: 100%;
 		}
 	}
 	.descdiv{
@@ -151,6 +172,10 @@
 			cursor: pointer;
 			@include shadow();
 		}
+		.title{
+			height: 4em;
+			background-color: $nav-back;
+		}
 	}
 	@media (min-width: 992px){
 		.col-md-3 {
@@ -166,9 +191,6 @@
 	}
 	.descdiv{
 		min-height: 15em;
-	}
-	.title{
-		color: $primary_color;
 	}
 	.infowindow{
 		display: none;

@@ -20,13 +20,26 @@
 	.row
 		.col-md-12.col-md-offset-1
 			.div.jobdiv.col-md-3{"ng-repeat" => "job in jobs track by $index"}
+				.row.like
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-up
+					.col-md-7.text-center
+						%img{:src => "assets/images/1.jpg"}
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-down
 				.row.title
 					.col-md-12.text-center
 						%h4
 							{{job.title}}
+				.row.resdiv
+					.col-md-12
+						%p.info
+							Responsibility
+						%p
+							{{job.responsibility}}
 				.row.descdiv
 					.col-md-12
-						%p
+						%p.info
 							Job Description
 						%p
 							{{job.description}}
@@ -37,10 +50,8 @@
 					.col-md-6
 						%p
 							Hours - {{job.hours}}
-				.row.like
-					.col-md-2
-						%span.glyphicon.glyphicon-thumbs-up
+				.row.more
+					.col-md-12
+						More details
 
-					.col-md-2.col-md-offset-8
-						%span.glyphicon.glyphicon-thumbs-down
 
