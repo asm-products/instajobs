@@ -1,0 +1,27 @@
+.container.candidates
+	.row
+		.col-md-12.text-center
+			%h4
+				Candidates Liked {{job.title}}
+	.row
+		.col-md-12.col-md-offset-1
+			.div.candiv.col-md-3{"ng-repeat" => "candidate in candidates track by $index"}
+				.row.like
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-up{"ng-click" => "match(candidate)"}
+					.col-md-7.text-center
+						%img{:src => "assets/images/6.jpg"}
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-down{"ng-click" => "removeMatch(candidate)"}
+				.row.title
+					.col-md-12.text-center
+						%h4
+							{{candidate.name}}
+				.row.descdiv
+					.col-md-12
+						%p.info
+							Email
+						%p
+							{{candidate.email}}
+
+

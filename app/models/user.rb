@@ -7,6 +7,7 @@ class User
   field :email_verify_token, type: String
   field :email_verified, type: Boolean
   field :forgot_password, type: String 
+  field :jobmatches, type: Array
   embeds_one :facebook_profile
   has_secure_password
   has_many :companies

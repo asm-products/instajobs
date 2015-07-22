@@ -22,6 +22,15 @@ class Api::JobsController < ApplicationController
 		render :json => @jobs
 	end
 
+	def show
+		@jobid = params[:id]
+		@job = Job.find(@jobid)
+		unless @job
+			render :json => {"result" => "job not found"}
+		end
+			render :json => @job
+	end
+
 	def create
 		cp = createparams(params)
 		@company = Company.find(cp[:companyid])
@@ -39,6 +48,7 @@ class Api::JobsController < ApplicationController
 		@job.responsibility = cp[:responsibility]
 		@job.location = [cp[:lat], cp[:lng]]
 		@job.created_at = Time.now
+		@job.jobmatches = []
 		@job.save
 		@company.jobs << @job
 		if @company.save
@@ -103,6 +113,9 @@ class Api::JobsController < ApplicationController
 			render :json => {"result" => "already added"}
 		else
 			@user.jobs << @job;
+			@user.jobmatches << 0;
+			@job.jobmatches << 0;
+			@job.save
 			@user.save;
 			render :json => {"result" => "success"}
 		end
@@ -113,12 +126,53 @@ class Api::JobsController < ApplicationController
 		@user = User.find(@user_id)
 		@job = Job.find(params[:job_id])
 		if @user.jobs.include?(@job)
+			@ind = @user.jobs.index(@job);
 			@user.jobs.delete(@job)
+			@user.jobmatches.delete_at(@ind)
+			@ind = @job.users.index(@user)
+			@job.users.delete_at(@ind)
+			@job.jobmatches.delete_at(@ind)
+			@job.save
 			@user.save
 			render :json => {"result" => "success"}
 		else
 			render :json => {"result" => "job not saved"}
 		end
+	end
+
+	def candidates
+		@jobid = params[:jobid]
+		@job = Job.find(@jobid)
+		@users = @job.users
+		unless @job
+			render :json => {"result" => "job not found"}
+		end
+		render :json => @users
+	end
+
+	def match
+		@candidate_id = params[:cid]
+		@candidate = User.find(@candidate_id)
+		@job_id = params[:jid]
+		@job = Job.find(@job_id)
+		@user_id = session["user_id"]["$oid"]
+		@user = User.find(@user_id)
+		@company = @job.company
+		unless @company.user_id.to_s == @user_id
+			render :json => {"result" => "not authorized"}
+			return
+		end
+		@ind = @job.users.index(@candidate)
+		@job.jobmatches[@ind] = 1
+		@job.save
+		@ind = @candidate.jobs.index(@job)
+		@candidate.jobmatches[@ind] = 1
+		@candidate.save
+		render :json => {"result" => "success"}
+	end
+
+	def removematch
+
 	end
 
 	private

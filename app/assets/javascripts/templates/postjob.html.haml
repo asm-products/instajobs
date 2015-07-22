@@ -143,3 +143,7 @@
 					.col-md-6
 						%p
 							Users Liked - {{job.user_ids.length}}
+				.row
+					.col-md-12
+						%a{"ui-sref" => "candidates({jobid: job._id[\"$oid\"]})", "style" => "cursor:pointer"}
+							Candidates Liked

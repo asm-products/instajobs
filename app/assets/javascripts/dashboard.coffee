@@ -40,5 +40,20 @@ do ->
       controller: 'jobsNearCtrl',
     };
 
+   $stateProvider.state 'candidates', {
+      url: '/candidates/:jobid',
+      templateUrl: 'candidates.html',
+      controller: 'candidatesCtrl',
+      resolve: {
+        candidates: ["$http", "$stateParams", ($http, $stateParams) ->
+          return $http({url: '/api/candidates', method : "GET", params: {jobid : $stateParams["jobid"]}}).then (response) ->
+            return response.data;
+        ],
+        job: ["$http", "$stateParams", ($http, $stateParams) -> 
+          return $http.get('/api/jobs/'+$stateParams["jobid"]).then (response) ->
+            return response.data;
+        ]
+      }
+    };
   ];
 	return

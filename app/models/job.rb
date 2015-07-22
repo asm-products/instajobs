@@ -7,6 +7,7 @@ class Job
   field :hours, type: Integer
   field :created_at, type: DateTime
   field :responsibility, type: String
+  field :jobmatches, type: Array
   index({ location: "2d" }, { min: -180, max: 180 })
   belongs_to :company
   has_and_belongs_to_many :users

@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
 		@user = User.find(@user_id)
 		@user_name = @user.name
 		@user_jobcount = @user.jobs.count
+		@matches = @user.jobmatches.count(1)
 	end
 
 	private 

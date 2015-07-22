@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     end
     match '/addJob' => "jobs#addJob", via: [:get]
     match '/removeJob' => "jobs#removeJob", via: [:get]
+    match '/candidates' => "jobs#candidates", via: [:get]
+    match '/match' => "jobs#match", via: [:post]
+    match '/removematch' => "jobs#removematch", via: [:post]
   end
 
 end

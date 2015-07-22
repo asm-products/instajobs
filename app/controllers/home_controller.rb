@@ -60,6 +60,7 @@ class HomeController < ApplicationController
   		verify_token = SecureRandom.urlsafe_base64
   	end
   	@u.email_verify_token = verify_token
+    @u.jobmatches = []
   	if @u.save
 	  	# TODO move mailer to background queue
 	  	SignupMailer.signup_link(@u).deliver

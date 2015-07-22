@@ -225,3 +225,41 @@
 		padding: 0.5em 1em;
 	}
 }
+.candidates{
+	.candiv{
+		@include border(#000);
+		margin: 0.5em;
+		padding: 1em;
+		min-height: 20em;
+		&:hover{
+			@include border($nav-back);
+			cursor: pointer;
+			@include shadow();
+		}
+		.title{
+			background-color: $nav-back;
+			color: #fff;
+		}
+		.like{
+			font-size: 20px;
+			background-color: $nav-back;
+			margin-top: -0.7em;
+			span{
+				margin-top: 3em;
+				cursor: pointer;
+				color: #fff;
+				background-color: $primary-color;
+				border-radius: 100%;
+				padding: 0.5em;
+			}
+			img{
+				width: 7em;
+				height: 7em;
+				border-radius: 100%;
+			}
+		}
+		.info{
+			font-weight: bold;
+		}
+	}
+}

@@ -5,6 +5,8 @@ do ->
 		$rootScope.user_name = uname; 
 		ujcount = document.getElementById('userjobsc').innerHTML;
 		$rootScope.user_jobcount = ujcount;
+		matches = document.getElementById('userjobm').innerHTML;
+		$rootScope.user_jobmatch = matches;
 		$rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
 			ngProgressLite.start();
 			return
