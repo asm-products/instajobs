@@ -172,7 +172,36 @@ class Api::JobsController < ApplicationController
 	end
 
 	def removematch
+		@candidate_id = params[:cid]
+		@candidate = User.find(@candidate_id)
+		@job_id = params[:jid]
+		@job = Job.find(@job_id)
+		@user_id = session["user_id"]["$oid"]
+		@user = User.find(@user_id)
+		@company = @job.company
+		unless @company.user_id.to_s == @user_id
+			render :json => {"result" => "not authorized"}
+			return
+		end
+		@ind = @job.users.index(@candidate)
+		@job.jobmatches[@ind] = 0
+		@job.save
+		@ind = @candidate.jobs.index(@job)
+		@candidate.jobmatches[@ind] = 0
+		@candidate.save
+		render :json => {"result" => "success"}
+	end
 
+	def mymatches
+		@user_id = session["user_id"]["$oid"]
+		@user = User.find(@user_id)
+		@jobs = []
+		for i in (0...(@user.jobs.size))
+			if @user.jobmatches[i] == 1
+				@jobs << @user.jobs[i]
+			end
+		end
+		render :json => @jobs
 	end
 
 	private

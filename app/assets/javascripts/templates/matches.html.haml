@@ -1,0 +1,43 @@
+.container.allJobs
+	.row.text-center
+		.col-md-12
+			%h4
+				Matches
+	.row
+		.col-md-12.col-md-offset-1
+			.div.jobdiv.col-md-3{"ng-repeat" => "job in jobs track by $index"}
+				.row.like
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-up{"ng-click" => "addJob(job)"}
+					.col-md-7.text-center
+						%img{:src => "assets/images/1.jpg"}
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-down{"ng-click" => "removeJob(job)"}
+				.row.title
+					.col-md-12.text-center
+						%h4
+							{{job.title}}
+				.row.resdiv
+					.col-md-12
+						%p.info
+							Responsibility
+						%p
+							{{job.responsibility}}
+				.row.descdiv
+					.col-md-12
+						%p.info
+							Job Description
+						%p
+							{{job.description}}
+				.row
+					.col-md-6
+						%p
+							Salary - {{job.salary}} 
+					.col-md-6
+						%p
+							Hours - {{job.hours}}
+				.row.more
+					.col-md-12
+						More details
+
+

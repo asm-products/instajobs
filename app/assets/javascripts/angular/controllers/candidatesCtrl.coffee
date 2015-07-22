@@ -6,10 +6,10 @@ do ->
 		$scope.match = (candidate) ->
 			$http({url: '/api/match', method: 'POST', data: {cid : candidate._id["$oid"], jid: $scope.job._id["$oid"]}}).then (response) ->
 				if response.data.result == "success"
-					alert("Saved like")
+					alert("Saved match")
 
 		$scope.removeMatch = (candidate) ->
 			$http({url: '/api/removematch', method: 'POST', data: {cid: candidate._id["$oid"], jid: $scope.job._id["$oid"]}}).then (response) ->
-				alert("Remove like")
+				alert("Removed match")
 	]
 	return

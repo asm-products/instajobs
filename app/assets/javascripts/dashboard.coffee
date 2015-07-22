@@ -55,5 +55,17 @@ do ->
         ]
       }
     };
+
+   $stateProvider.state 'matches', {
+      url: '/matches',
+      templateUrl: 'matches.html',
+      controller: 'matchesCtrl',
+      resolve:{
+        matches: ["$http", ($http) ->
+          return $http.get('/api/mymatches').then (response) ->
+            return response.data;
+        ]
+      }
+   } 
   ];
 	return

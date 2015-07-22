@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     match '/candidates' => "jobs#candidates", via: [:get]
     match '/match' => "jobs#match", via: [:post]
     match '/removematch' => "jobs#removematch", via: [:post]
+    match '/mymatches' => "jobs#mymatches", via: [:get]
   end
 
 end
