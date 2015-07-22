@@ -7,12 +7,8 @@
 		.col-md-12.col-md-offset-1
 			.div.jobdiv.col-md-3{"ng-repeat" => "job in jobs track by $index"}
 				.row.like
-					.col-md-2
-						%span.glyphicon.glyphicon-thumbs-up{"ng-click" => "addJob(job)"}
-					.col-md-7.text-center
+					.col-md-7.col-md-offset-2.text-center
 						%img{:src => "assets/images/1.jpg"}
-					.col-md-2
-						%span.glyphicon.glyphicon-thumbs-down{"ng-click" => "removeJob(job)"}
 				.row.title
 					.col-md-12.text-center
 						%h4
