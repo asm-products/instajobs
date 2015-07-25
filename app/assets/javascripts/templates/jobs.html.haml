@@ -22,9 +22,29 @@
 			%div{:class => "modal-body"}
 				.row
 					.col-md-12
-						%p 
+						%p.info
 							Description
-
+					.col-md-12
+						{{selectedj.description}}
+				%br
+				.row
+					.col-md-12
+						%p.info
+							Responsibility
+					.col-md-12
+						{{selectedj.responsibility}}
+				%br
+				.row
+					.col-md-6
+						%p.info
+							Salary - {{selectedj.salary}}
+					.col-md-6
+						%p.info
+							Hours - {{selectedj.hours}}
+				.row
+					.col-md-12.text-center
+						.datetime
+							Created at - {{selectedj.created_at | date : format: timezone}}
 .container.allJobs
 	.row.text-center
 		.col-md-12
