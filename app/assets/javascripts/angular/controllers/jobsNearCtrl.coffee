@@ -49,8 +49,8 @@ do ->
 					latitude: j.location[0],
 					longitude: j.location[1],
 				}
-				j.description = j.description.substring(0, Math.min(j.description.lenght, 140))
-				# console.log(j.coords)
+				if j.description
+					j.description = j.description.substring(0, Math.min(j.description.lenght, 140))
 		
 		$scope.slider = 'options':
 		  start: (event, ui) ->
