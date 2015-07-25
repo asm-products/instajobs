@@ -6,6 +6,7 @@ do ->
 		$scope.lng = null;
 		$scope.jobs = null;
 		$scope.radius = 5;
+		$scope.selectedj = null;
 
 		getLatLng = () ->
 			if(navigator.geolocation)
@@ -86,5 +87,8 @@ do ->
 				if response.data.result == "success"
 					$rootScope.user_jobcount = parseInt($rootScope.user_jobcount) - 1;
 					alert("Added to Saved Jobs")
+
+		$scope.selectedJob = (job) ->
+			$scope.selectedj = job
 	]
 	return
