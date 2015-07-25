@@ -5,6 +5,9 @@ $(document).ready () ->
 	setloginbtn = () ->
 		$("#loginbtn").html("Sign In");
 
+	setforgotbtn = () ->
+		$("#forgotbtn").html("Forgot Password")		
+
 	$('#signuphref').click () ->
 		$('.loginform').fadeOut () ->
 			$('.signupform').fadeIn()
@@ -41,7 +44,7 @@ $(document).ready () ->
 					$("#signupbtn").html("Check Mail")
 				else 
 					alert(response.result)
-				setTimeout(setsignbtn, 2000);
+				setTimeout(setsignbtn, 2000);	values = $(".loginform form:first-child input");
 			error: (error)->
 				alert(error)
 				setTimeout(setsignbtn, 2000);
@@ -106,3 +109,27 @@ $(document).ready () ->
 				alert("authorization failed")
 		, {scope: 'email'}	
 		return
+
+	$("#forgotbtn").click (event) ->
+		event.preventDefault();
+		values = $(".loginform form:first-child input");
+		email = values[0].value
+		unless email
+			alert("Enter email")
+			return
+		$.ajax
+			url: '/forgotpassword'
+			type: 'POST'
+			data: {email: email}
+			success: (response) ->
+				if response.result == "success"
+					$("#forgotbtn").html("Email Sent")
+				else
+					$("#forgotbtn").html("Error")
+				return 
+			error: (error) -> 
+				$("#forgotbtn").html("Error")
+				return 
+			setTimeout(setforgotbtn, 2000)
+		return
+	return

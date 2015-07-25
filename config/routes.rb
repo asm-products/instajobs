@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   match '/verify' => 'home#verify', via: [:get]
   match '/fb' => 'home#fb', via: [:post]
   match '/logout' => 'home#logout', via: [:get]
+  match '/forgotpassword' => "home#genpassword", via: [:post]
 
   # dashboard route
   match '/dashboard' => 'dashboard#index', via: [:get]

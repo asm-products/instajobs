@@ -45,6 +45,21 @@ class HomeController < ApplicationController
   	end
   end
 
+  def genpassword
+    @email = params[:email]
+    @user = User.where(:email => @email).first
+    unless @user
+      render :json => {result: "user not found"}
+    end
+    @user.password = SecureRandom.hex(6)
+    if @user.save
+      FbSignupMailer.password(@user).deliver
+      render :json => {result: "success"}
+    else
+      render :json => {result: "save error"}
+    end
+  end
+
   def signup
   	sparams = signup_params(params)
   	@u = User.new()
