@@ -57,6 +57,7 @@ group :development, :test do
 end
 gem "foreman"
 gem "figaro"
+gem "geocoder"
 group :production, :staging do 
   gem "rails_12factor"
   gem "rails_stdout_logging"

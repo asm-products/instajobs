@@ -263,3 +263,33 @@
 		}
 	}
 }
+.singlejob{
+	.modal-header{
+		background-color: $nav-back;
+		min-height: 18em;
+		span{
+			color: #fff;
+		}
+	}
+	.like{
+		font-size: 20px;
+		background-color: $nav-back;
+		margin-top: -0.7em;
+		span{
+			margin-top: 3em;
+			cursor: pointer;
+			color: #fff;
+			background-color: $primary-color;
+			border-radius: 100%;
+			padding: 0.5em;
+		}
+		img{
+			width: 9em;
+			height: 9em;
+			border-radius: 100%;
+		}
+	}
+	.title{
+		color: #fff;
+	}
+}
