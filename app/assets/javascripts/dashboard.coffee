@@ -60,12 +60,26 @@ do ->
       url: '/matches',
       templateUrl: 'matches.html',
       controller: 'matchesCtrl',
-      resolve:{
+      resolve: {
         matches: ["$http", ($http) ->
           return $http.get('/api/mymatches').then (response) ->
             return response.data;
         ]
       }
-   } 
+   };
+
+   $stateProvider.state 'profile', {
+      url: '/profile',
+      templateUrl: 'profile.html',
+      controller: 'profileCtrl',
+      resolve: {
+        user: ["$http", ($http) ->
+          return $http.get('/api/user').then (response) ->
+            return response.data;
+        ]
+      }
+   }
+  
+
   ];
 	return

@@ -298,3 +298,8 @@
 		}
 	}
 }
+.profile{
+	.subbtn{
+		@include button-insta($primary-color);
+	}
+}

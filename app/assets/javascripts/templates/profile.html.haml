@@ -1,0 +1,23 @@
+.profile
+	%form{"role" => "form", :novalidate => '', "ng-model" => "user", "name" => "userform", "ng-submit" => "userform.$valid && updateUser(user)"}
+		.row
+			.col-md-1.col-md-offset-3
+				Name
+			.col-md-5
+				%input.form-control{"ng-model" => "user.name", "ng-value" => "{{user.name}}", "placeholder" => "Name", "ng-required" => "true"}
+		%br
+		.row
+			.col-md-1.col-md-offset-3
+				Email
+			.col-md-5
+				%input.form-control{"ng-model" => "user.email", "ng-value" => "{{user.email}}", "placeholder" => "Name", "ng-required" => "true", "ng-readonly" => "true"}
+		%br
+		.row
+			.col-md-1.col-md-offset-3
+				Password
+			.col-md-5
+				%input.form-control{"ng-model" => "user.password", "ng-value" => "{{user.password}}", "placeholder" => "*****", "ng-required" => "true", "type" => "password"}
+		%br
+		.row
+			.col-md-3.col-md-offset-5.text-center
+				%input.subbtn{"type" => "Submit", "ng-value" => "submitbtnval"}
