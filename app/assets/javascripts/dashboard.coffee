@@ -66,7 +66,7 @@ do ->
             return response.data;
         ]
       }
-   };
+    };
 
    $stateProvider.state 'profile', {
       url: '/profile',
@@ -78,8 +78,19 @@ do ->
             return response.data;
         ]
       }
-   }
-  
+    };
+   
+   $stateProvider.state 'savedjobs', {
+      url: '/savedjobs',
+      templateUrl: 'savedjobs.html',
+      controller: 'savedjobsCtrl',
+      resolve: {
+        savedjobs: ["$http", ($http) ->
+          return $http.get('/api/savedjobs').then (response) ->
+            return response.data; 
+        ]
+      }  
+    };
 
   ];
 	return

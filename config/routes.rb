@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     match '/mymatches' => "jobs#mymatches", via: [:get]
     match '/user' => "users#index", via: [:get]
     match '/user' => "users#update", via: [:post]
+    match '/savedjobs' => "users#savedjobs", via: [:get]
   end
 
 end

@@ -18,5 +18,7 @@ do ->
 			$scope.selectedj = job;
 		$scope.gomatches = () ->
 			$state.go("matches")
+		$scope.gosavedjobs = ()->
+			$state.go("savedjobs")
 	]
 	return

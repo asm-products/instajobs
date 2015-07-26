@@ -29,6 +29,16 @@ class Api::UsersController < ApplicationController
 		end
 	end
 
+	def savedjobs
+		@user_id = session[:user_id]["$oid"]
+		@user = User.find(@user_id)
+		if @user
+			render :json => @user.jobs
+		else
+			render :json => {result: "user not found"}
+		end
+	end
+
 	private
 	def check_login
 		if session[:user_id].nil?
