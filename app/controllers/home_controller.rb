@@ -113,7 +113,7 @@ class HomeController < ApplicationController
   	else 
   		@u.email_verified = true
   		@u.save
-   		render :json => {result: "email verified, you can now login to site"}
+      redirect_to "/connect"
   	end
   end
 
