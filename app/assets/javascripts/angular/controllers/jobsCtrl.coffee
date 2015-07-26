@@ -1,6 +1,6 @@
 do ->
 	app = angular.module 'instajob'
-	app.controller 'jobsCtrl', ['jobs', '$scope', '$http', '$rootScope', (jobs, $scope, $http, $rootScope) ->
+	app.controller 'jobsCtrl', ['jobs', '$scope', '$http', '$rootScope', "$state", (jobs, $scope, $http, $rootScope, $state) ->
 		$scope.jobs = jobs;
 		$scope.selectedj = null;
 		for j in $scope.jobs
@@ -16,5 +16,7 @@ do ->
 					$rootScope.user_jobcount = parseInt($rootScope.user_jobcount) - 1;
 		$scope.selectedJob = (job) ->
 			$scope.selectedj = job;
+		$scope.gomatches = () ->
+			$state.go("matches")
 	]
 	return

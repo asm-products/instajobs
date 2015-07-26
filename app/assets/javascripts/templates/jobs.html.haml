@@ -52,13 +52,13 @@
 				Job Listings
 	.row.text-center
 		.col-md-12
-			%button.matches
+			%button.matches{"ng-click" => "gomatches()"}
 				%div.matchescount
 					%span.glyphicon.glyphicon-user
 					{{$root.user_jobmatch}}
 				%p
 					Matches
-			%button.savedjobs
+			%button.savedjobs{"ng-click" => "gosavedjobs()"}
 				%div.savedjobscount
 					%span.glyphicon.glyphicon-briefcase
 					{{$root.user_jobcount}}
@@ -78,6 +78,12 @@
 					.col-md-12.text-center
 						%h4
 							{{job.title}}
+				.row.address
+					.col-md-12
+						%p.info
+							Location
+						%p
+							{{job.address}}
 				.row.resdiv
 					.col-md-12
 						%p.info
