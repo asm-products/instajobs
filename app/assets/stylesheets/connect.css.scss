@@ -11,6 +11,15 @@
 	min-width: 43.15em;
 	width: 43.15em;
 	@include outer-container;
+	.fblogin{
+		padding: 1em 1em 1em 0.5em;
+	}
+	.inlogin{
+		padding: 1em 1em 1em 0.5em;
+	}
+	.btn-social > :first-child{
+		padding-top: 0.3em;
+	}
 	.signupform{
 		padding: 3em;
 		.form-control::-webkit-input-placeholder{
@@ -27,12 +36,6 @@
 		}
 		.submitbtn{
 			@include button-insta($primary_color);
-		}
-		.fblogin{
-			background-color: #477dca;
-			color: #fff;
-			border: none;
-			padding: 1em;
 		}
 	}
 	.loginform{
@@ -52,12 +55,6 @@
 		}
 		.submitbtn{
 			@include button-insta($primary_color);
-		}
-		.fblogin{
-			background-color: #477dca;
-			color: #fff;
-			border: none;
-			padding: 1em;
 		}
 	}
 	#forgotbtn{

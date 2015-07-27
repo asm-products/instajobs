@@ -45,6 +45,32 @@ class HomeController < ApplicationController
   	end
   end
 
+  def linkedin
+    inparam = inparams(params)
+    newsignup = false
+    @u = User.where(:email => inparam[:emailAddress]).first
+    if @u
+      @u.linked_in_profile = LinkedInProfile.new(:uid => inparam[:id], :first_name => inparam[:firstName], :last_name => inparam[:lastName])
+    else
+      @u = User.new
+      @u.name = inparam[:firstName] + inparam[:lastName]
+      @u.email = inparam[:emailAddress]
+      @u.email_verified = true
+      @u.password = SecureRandom.hex(6)
+      @u.linked_in_profile = LinkedInProfile.new(:uid => inparam[:id], :first_name => inparam[:firstName], :last_name => inparam[:lastName])
+      newsignup = true
+    end
+    if @u.save
+      if newsignup
+        FbSignupMailer.password(@u).deliver
+      end
+      session[:user_id] = @u.id
+      render :json => {result: "success"}
+    else
+      render :json => {result: "save error" + @u.errors.join(" ")}
+    end  
+  end
+
   def genpassword
     @email = params[:email]
     @user = User.where(:email => @email).first
@@ -130,4 +156,7 @@ class HomeController < ApplicationController
   	params.permit(:email, :name, :id, :access_token)
   end
 
+  def inparams(params)
+    params.permit(:emailAddress, :firstName, :lastName, :id)
+  end
 end

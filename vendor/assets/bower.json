@@ -9,8 +9,7 @@
     "underscore": "latest",
     "lodash": "latest",
     "angular-ui-slider": "latest",
-    "jquery-ui": "latest"
-  },
-  "resolutions": {
+    "jquery-ui": "latest",
+    "bootstrap-social": "latest"
   }
 }

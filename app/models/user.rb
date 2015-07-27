@@ -9,6 +9,7 @@ class User
   field :forgot_password, type: String 
   field :jobmatches, type: Array
   embeds_one :facebook_profile
+  embeds_one :linked_in_profile
   has_secure_password
   has_many :companies
   has_and_belongs_to_many :jobs

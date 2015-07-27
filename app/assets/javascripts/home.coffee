@@ -1,4 +1,5 @@
 $(document).ready () ->
+
 	setsignbtn = () ->
 		$("#signupbtn").html("Create account");
 
@@ -109,6 +110,36 @@ $(document).ready () ->
 				alert("authorization failed")
 		, {scope: 'email'}	
 		return
+
+	linkedinlogin = ()->
+		IN.API.Profile("me").fields("id", "firstName", "lastName", "email-address").result(linkedinloginsuccess).error(linkedinloginerror);
+
+	linkedinloginsuccess = (profiles) ->
+		member = profiles.values[0];
+		console.log(profiles.values[0]);
+		$.ajax
+			url: '/linkedin'
+			type: 'POST'
+			data: member
+			success: (response) ->
+				if response.result == "success"
+					location.reload();
+					return false;
+				else
+					alert(response.result)
+				return
+			error: (error) ->
+				alert(error)
+		return
+		
+
+
+	linkedinloginerror = () ->
+		alert("Error");
+
+	$(".inlogin").click (event) ->
+		event.preventDefault();
+		IN.User.authorize(linkedinlogin, window);
 
 	$("#forgotbtn").click (event) ->
 		event.preventDefault();

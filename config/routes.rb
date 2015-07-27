@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   match '/signup' => 'home#signup', via: [:post]
   match '/verify' => 'home#verify', via: [:get]
   match '/fb' => 'home#fb', via: [:post]
+  match '/linkedin' => "home#linkedin", via: [:post]
   match '/logout' => 'home#logout', via: [:get]
   match '/forgotpassword' => "home#genpassword", via: [:post]
 

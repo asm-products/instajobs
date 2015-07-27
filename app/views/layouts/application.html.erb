@@ -6,7 +6,7 @@
   <%= csrf_meta_tags %>
   <%= render 'layouts/favicon' %>
 	<%= javascript_include_tag '//maps.googleapis.com/maps/api/js?sensor=false' %>
-
+	<%= yield :head %>
 </head>
 <body>
 	<%= yield %>

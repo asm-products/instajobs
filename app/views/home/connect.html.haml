@@ -1,3 +1,10 @@
+=content_for :head do
+	%script{:type => "text/javascript", :src => "//platform.linkedin.com/in.js"}
+		api_key:   75xx0kw3b41lm5
+		authorize: false
+		lang:      en_US
+		scope: 		 r_basicprofile r_emailaddress 
+
 .mainNav	
 	%nav.navbar{:role => 'navigation'}
 		.navbar-header
@@ -30,10 +37,12 @@
 				%button.submitbtn#signupbtn{}
 					Create account
 				%hr
-					%button.fblogin
-						%i{:class=> "fa fa-facebook"}
-						%span
-							Sign Up with Facebook
+					%a.btn.btn-block.btn-facebook.btn-social.fblogin
+						%i{:class=> "fa fa-facebook"} 
+						Sign Up with Facebook
+					%a.btn.btn-block.btn-linkedin.btn-social.inlogin
+						%i{:class=> "fa fa-linkedin"} 
+						Sign Up with LinkedIn
 		.loginform
 			%form
 				%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email", :required=>""}
@@ -45,10 +54,12 @@
 				%button.submitbtn#forgotbtn{}
 					Fogot Password
 				%hr
-					%button.fblogin
+					%a.btn.btn-block.btn-social.btn-facebook.fblogin
 						%i{:class=> "fa fa-facebook"}
-						%span
-							Login with Facebook
+						Login with Facebook
+					%a.btn.btn-block.btn-social.btn-linkedin.inlogin
+						%i{:class=> "fa fa-linkedin"}
+						Login with Linkedin
 #fb-root
 %script{:type => 'text/javascript'}
 	window.fbAsyncInit = function() {
@@ -68,3 +79,4 @@
 	js.src = "//connect.facebook.net/en_US/all.js";
 	ref.parentNode.insertBefore(js, ref);
 	}(document));
+

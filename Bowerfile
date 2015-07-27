@@ -7,5 +7,6 @@ asset 'underscore'
 asset 'lodash'
 asset 'angular-ui-slider'
 asset 'jquery-ui'
+asset 'bootstrap-social'
 
 #vim: ft=ruby
