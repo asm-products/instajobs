@@ -1,5 +1,5 @@
 class FbSignupMailer < ApplicationMailer
-	default :from => "ashesh.vidyut@gmail.com"
+	default :from => "support@instajob.io"
 	def password(user)
 		@user = user
 		@password = user.password

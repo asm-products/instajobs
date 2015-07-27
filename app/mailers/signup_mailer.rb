@@ -1,5 +1,5 @@
 class SignupMailer < ApplicationMailer
-	default :from => "ashesh.vidyut@gmail.com"
+	default :from => "support@instajob.io"
 	def signup_link(user)
 		@user = user
 		@link = ENV["DOMAIN"]+"verify?token=" + @user.email_verify_token; 
