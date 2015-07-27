@@ -70,7 +70,6 @@ do ->
 				$scope.infowindowjob = model;
 				$(".infowindow").fadeIn();
 			"mouseout" : (gMarker, eventname, model) ->
-				$(".infowindow").fadeOut();
 
 		$scope.markerEvent = 
 			"mouseover" : (gMarker, eventname, model) ->
