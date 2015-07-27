@@ -283,13 +283,14 @@
 		display: none;
 		text-transform: uppercase;
 		position: absolute;
-		top: 30%;
-		left: 45%;
+		top: 15%;
+		left: 75%;
 		width: 25em;
 		height: 30em;
-		z-index: 555;
-		color: $primary-color;
+		z-index: 555989;
+		color: $nav-back;
 		padding: 0.5em 1em;
+		background-color: #fff;
 	}
 }
 .candidates{
