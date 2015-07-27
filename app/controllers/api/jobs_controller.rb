@@ -3,7 +3,7 @@ class Api::JobsController < ApplicationController
 	before_action :check_login
 
 	def index
-		@jobs = Job.all
+		@jobs = Job.order("created_at DESC")
 		if params.include?(:user_id)
 			@user_id = session[:user_id]["$oid"]
 			@user = User.find(@user_id)
