@@ -80,7 +80,7 @@
 			%ui-gmap-google-map{"center" => 'map.center', "zoom" => 'map.zoom'}
 				%ui-gmap-marker{"coords" => "marker.coords", "idKey" => "marker.id", "options" => "marker.options", "events" => "markerEvent"}
 				%ui-gmap-markers{"models" => "jobs", "coords" => "'coords'", "options" => "markers.options", "idKey" => "id", "events" => "markersEvents"}
-		.jobdiv.infowindow.col-md-3
+		.jobdiv.infowindow.col-md-3{"ng-if" => "mapv"}
 			.row.like
 				.col-md-2
 					%span.glyphicon.glyphicon-thumbs-up{"ng-click" => "addJob(infowindowjob)"}
