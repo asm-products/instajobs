@@ -1,12 +1,14 @@
 do ->
 	app = angular.module 'instajob'
-	app.controller 'jobsNearCtrl', ["$http", "$scope", "uiGmapGoogleMapApi", "$rootScope", ($http, $scope, uiGmapGoogleMapApi, $rootScope) ->
+	app.controller 'jobsNearCtrl', ["$http", "$scope", "uiGmapGoogleMapApi", "$rootScope", "$state", ($http, $scope, uiGmapGoogleMapApi, $rootScope, $state) ->
 		$scope.loading = true;
 		$scope.lat = null;
 		$scope.lng = null;
 		$scope.jobs = null;
 		$scope.radius = 5;
 		$scope.selectedj = null;
+		$scope.mapv = false;
+		$scope.infowindowjob = null;
 
 		getLatLng = () ->
 			if(navigator.geolocation)
@@ -50,7 +52,7 @@ do ->
 					longitude: j.location[1],
 				}
 				if j.description
-					j.description = j.description.substring(0, Math.min(j.description.lenght, 140))
+					j.short_description = j.description.substring(0, Math.min(j.description.lenght, 140))
 		
 		$scope.slider = 'options':
 		  start: (event, ui) ->
@@ -65,17 +67,16 @@ do ->
 
 		$scope.markersEvents = 
 			"mouseover" : (gMarker, eventname, model) ->
+				$scope.infowindowjob = model;
 				$(".infowindow").fadeIn();
-				$(".infowindow").html(model.title);
 			"mouseout" : (gMarker, eventname, model) ->
 				$(".infowindow").fadeOut();
 
 		$scope.markerEvent = 
 			"mouseover" : (gMarker, eventname, model) ->
-				$(".infowindow").fadeIn();
-				$(".infowindow").html("Me");
+				return 
 			"mouseout" : (gMarker, eventname, model) ->
-				$(".infowindow").fadeOut();
+				return
 
 		$scope.addJob = (job) ->
 			$http({url: '/api/addJob', params: {job_id: job._id["$oid"]}}).then (response) ->
@@ -90,5 +91,10 @@ do ->
 
 		$scope.selectedJob = (job) ->
 			$scope.selectedj = job
+
+		$scope.gomatches = () ->
+			$state.go("matches")
+		$scope.gosavedjobs = ()->
+			$state.go("savedjobs")
 	]
 	return

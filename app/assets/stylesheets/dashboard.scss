@@ -154,13 +154,79 @@
 .jobsNear{
 	font-family: $font-family;
 	.angular-google-map-container{
-		height: 23em;
+		height: 60em;
+	}
+	.head{
+		.col-md-2 {
+			width: 10%;
+		}
+		.settings{
+			padding-top: 1em;
+			.col-md-2 {
+				width: 25%;
+			}	
+		}
+	}
+	.mapc{
 	}
 	.loadinggif{
 		position: absolute;
 		z-index: 89;
 		top: 50%;
 		left: 50%;
+	}
+	.matches{
+		padding: 0;
+		padding-right: 1em;
+		border-radius: 0.2em;
+		@include button-alljobs($primary-color);
+		p{
+			float: right;
+			padding-top: 0.6em;
+		}
+	}
+	.savedjobs{
+		border-radius: 0.2em;
+		padding: 0;
+		padding-right: 1em;
+		@include button-alljobs($nav-back);
+		p{
+			float: right;
+			padding-top: 0.6em;
+		}
+	}
+	.matchescount{
+		padding-top: 0.7em;
+		height: 2.7em;
+		width: 3em;
+		color: #fff;
+		float: left;
+		margin-right: 1em;
+		background-color: $primary-color;
+	}
+	.savedjobscount{
+		padding-top: 0.7em;
+		height: 2.7em;
+		width: 3em;
+		color: #fff;
+		float: left;
+		margin-right: 1em;
+		background-color: $nav-back;	
+	}
+	.mapvbtn{
+		padding: 0.5em;
+		padding-left: 0.8em;
+		padding-right: 1em;
+		margin-left: -0.3em;
+		color: #fff;
+		background-color: $nav-back;
+		border: none;
+	}
+	.listvbtn{
+		padding: 0.5em;
+		color: #fff;
+		background-color: $primary-color;
+		border: none;
 	}
 	.jobdiv{
 		@include border(#000);
@@ -219,8 +285,9 @@
 		position: absolute;
 		top: 30%;
 		left: 45%;
+		width: 25em;
+		height: 30em;
 		z-index: 555;
-		background-color: lighten(#000, 10%);
 		color: $primary-color;
 		padding: 0.5em 1em;
 	}

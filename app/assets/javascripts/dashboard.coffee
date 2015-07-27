@@ -7,7 +7,7 @@ do ->
  app.config ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
   	$urlRouterProvider.otherwise('/');
   	$stateProvider.state 'jobs', {
-  		url: '/',
+  		url: '/alljobs',
   		templateUrl: 'jobs.html',
   		controller: 'jobsCtrl',
   		resolve: {
@@ -35,7 +35,7 @@ do ->
     };
     
    $stateProvider.state 'jobsnear', {
-      url: '/jobsnear',
+      url: '/',
       templateUrl: 'jobsnear.html',
       controller: 'jobsNearCtrl',
     };

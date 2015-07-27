@@ -46,21 +46,79 @@
 						.datetime
 							Created at - {{selectedj.created_at | date : format: timezone}}
 .container.jobsNear
-	.infowindow			
-
 	.row.loadinggif{"ng-show" => "loading"}
 		%img{"src" => "reload.gif"}
-	%ui-gmap-google-map{"center" => 'map.center', "zoom" => 'map.zoom'}
-		%ui-gmap-marker{"coords" => "marker.coords", "idKey" => "marker.id", "options" => "marker.options", "events" => "markerEvent"}
-		%ui-gmap-markers{"models" => "jobs", "coords" => "'coords'", "options" => "markers.options", "idKey" => "id", "events" => "markersEvents"}
+	.row.head
+		.col-md-3
+			%button.matches{"ng-click" => "gomatches()"}
+				%div.matchescount
+					%span.glyphicon.glyphicon-user
+					{{$root.user_jobmatch}}
+				%p
+					Matches
+			%button.savedjobs{"ng-click" => "gosavedjobs()"}
+				%div.savedjobscount
+					%span.glyphicon.glyphicon-briefcase
+					{{$root.user_jobcount}}
+				%p
+					Saved Jobs
+		.col-md-2
+			%button.listvbtn{"ng-click" => "mapv = false"}
+				%i.fa.fa-list.fa-2x
+			%button.mapvbtn{"ng-click" => "mapv = true"}
+				%i.fa.fa-map-marker.fa-2x
+		.col-md-6
+			.row.settings
+				.col-md-2
+					%b
+						Radius - {{radius}}
+				.col-md-9
+					%div{"ui-slider" => "slider.options", "min" => 5, "max" => "100", "ng-model" => "radius"}
+
+	.container
+		.row{"ng-if" => "mapv"}
+			%ui-gmap-google-map{"center" => 'map.center', "zoom" => 'map.zoom'}
+				%ui-gmap-marker{"coords" => "marker.coords", "idKey" => "marker.id", "options" => "marker.options", "events" => "markerEvent"}
+				%ui-gmap-markers{"models" => "jobs", "coords" => "'coords'", "options" => "markers.options", "idKey" => "id", "events" => "markersEvents"}
+		.jobdiv.infowindow.col-md-3
+			.row.like
+				.col-md-2
+					%span.glyphicon.glyphicon-thumbs-up{"ng-click" => "addJob(infowindowjob)"}
+				.col-md-7.text-center
+					%img{:src => "assets/images/1.jpg"}
+				.col-md-2
+					%span.glyphicon.glyphicon-thumbs-down{"ng-click" => "removeJob(infowindowjob)"}
+			.row.title
+				.col-md-12.text-center
+					%h4
+						{{infowindowjob.title}}
+			.row.address
+				.col-md-12
+					%p.info
+						Location
+					%p
+						{{infowindowjob.address}}
+			.row.resdiv
+				.col-md-12
+					%p.info
+						Responsibility
+					%p
+						{{infowindowjob.responsibility}}
+			.row.descdiv
+				.col-md-12
+					%p.info
+						Job Description
+					%p
+						{{infowindowjob.short_description}}
+			.row
+				.col-md-6
+					%p
+						Salary - {{infowindowjob.salary}} 
+				.col-md-6
+					%p
+						Hours - {{infowindowjob.hours}}
 	%br
-	.row
-		.col-md-4
-			Radius - {{radius}}
-		.col-md-8
-			%div{"ui-slider" => "slider.options", "min" => 5, "max" => "100", "ng-model" => "radius"}
-	%br
-	.row
+	.row{"ng-if" => "!mapv"}
 		.col-md-12
 			.div.jobdiv.col-md-3{"ng-repeat" => "job in jobs track by $index"}
 				.row.like
@@ -91,7 +149,7 @@
 						%p.info
 							Job Description
 						%p
-							{{job.description}}
+							{{job.short_description}}
 				.row
 					.col-md-6
 						%p
