@@ -115,6 +115,7 @@ $(document).ready () ->
 		IN.API.Profile("me").fields("id", "firstName", "lastName", "email-address").result(linkedinloginsuccess).error(linkedinloginerror);
 
 	linkedinloginsuccess = (profiles) ->
+		$(".inlogin").html("Connecting ..")
 		member = profiles.values[0];
 		console.log(profiles.values[0]);
 		$.ajax
