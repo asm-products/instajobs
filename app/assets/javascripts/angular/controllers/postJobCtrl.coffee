@@ -15,6 +15,8 @@ do ->
 		$scope.editjob = null;
 
 		$scope.myjobs = myjobs;
+		unless $scope.myjobs
+			$scope.myjobs = []
 		$scope.mycompanies = mycompanies;
 		$scope.showjobs = [];
 		for j in $scope.myjobs

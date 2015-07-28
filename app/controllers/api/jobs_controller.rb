@@ -28,7 +28,8 @@ class Api::JobsController < ApplicationController
 			render :json => {jobs: @jobs, lat: lat, lng: lng}
 			return
 		end
-		render :json => {result: "no params match"}
+		render :json => @jobs
+		return
 	end
 
 	def show
