@@ -1,0 +1,111 @@
+%div.singlejob.modal.fade{"tabindex" => -1, "role" => 'dialog', "id" => "myModal", "aria-labelledby" => "myModelLabel"}
+	%div{"class" => "modal-dialog", "role" => "document"}
+		%div{:class => "modal-content"}
+			%div.header{:class => "modal-header"}
+				%button{:type => "button", :class => "close", "data-dismiss" => "modal", "aria-label" => "Close"}
+					%span{"aria-hidden" => "true"}
+						&times;
+				.row.like
+					.col-md-2.col-md-offset-1
+						%span.glyphicon.glyphicon-thumbs-up{"ng-click" => "addJob(selectedj)"}
+					.col-md-6.text-center
+						%img{:src => "assets/images/1.jpg"}
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-down{"ng-click" => "removeJob(selectedj)"}
+				.row.title
+					.col-md-12.text-center
+						%h4
+							{{selectedj.title}}
+					.col-md-12.text-center
+						%h5
+							{{selectedj.address}}
+			%div{:class => "modal-body"}
+				.row
+					.col-md-12
+						%p.info
+							Description
+					.col-md-12
+						{{selectedj.description}}
+				%br
+				.row
+					.col-md-12
+						%p.info
+							Responsibility
+					.col-md-12
+						{{selectedj.responsibility}}
+				%br
+				.row
+					.col-md-6
+						%p.info
+							Salary - {{selectedj.salary}}
+					.col-md-6
+						%p.info
+							Hours - {{selectedj.hours}}
+				.row
+					.col-md-12.text-center
+						.datetime
+							Created at - {{selectedj.created_at | date : 'medium'}}
+.container.allJobs
+	.row.text-center
+		.col-md-12
+			%h4
+				Job Listings
+	.row.text-center
+		.col-md-12
+			%button.matches{"ng-click" => "gomatches()"}
+				%div.matchescount
+					%span.glyphicon.glyphicon-user
+					{{$root.user_jobmatch}}
+				%p
+					Matches
+			%button.savedjobs{"ng-click" => "gosavedjobs()"}
+				%div.savedjobscount
+					%span.glyphicon.glyphicon-briefcase
+					{{$root.user_jobcount}}
+				%p
+					Saved Jobs
+	.row
+		.col-md-12.col-md-offset-1
+			.div.jobdiv.col-md-3{"ng-repeat" => "job in jobs track by $index"}
+				.row.like
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-up{"ng-click" => "addJob(job)"}
+					.col-md-7.text-center
+						%img{:src => "assets/images/1.jpg"}
+					.col-md-2
+						%span.glyphicon.glyphicon-thumbs-down{"ng-click" => "removeJob(job)"}
+				.row.title
+					.col-md-12.text-center
+						%h4
+							{{job.title}}
+				.row.address
+					.col-md-12
+						%p.info
+							Location
+						%p
+							{{job.address}}
+				.row.resdiv
+					.col-md-12
+						%p.info
+							Responsibility
+						%p
+							{{job.responsibility}}
+				.row.descdiv
+					.col-md-12
+						%p.info
+							Job Description
+						%p
+							{{job.short_description}}
+				.row
+					.col-md-6
+						%p
+							Salary - {{job.salary}} 
+					.col-md-6
+						%p
+							Hours - {{job.hours}}
+				.row.more
+					.col-md-12
+						%span{"ng-click" => "selectedJob(job)", "data-toggle" => "modal", "data-target" => "#myModal"}
+							More details
+
+

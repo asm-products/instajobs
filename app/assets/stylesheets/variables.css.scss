@@ -1,0 +1,32 @@
+$primary-color: #C11A2F;
+$font-family: $verdana;
+$nav-back : #0F2938;
+
+@mixin border($color){
+	border: 1px solid $color;
+}
+
+@mixin button-insta($color){
+	border: none;
+	padding: 1em;
+	background-color: $color;
+	color: #fff;
+	cursor: pointer;
+	transition: ease 0.2s all;
+	&:hover{
+		background-color: #fff;
+		color: $color;
+	}
+}
+
+@mixin shadow(){
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+@mixin button-alljobs($color){
+	background-color: #fff;
+	border: 2px solid $color; 
+	color: $color;
+}

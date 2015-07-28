@@ -1,0 +1,149 @@
+%div.modal.fade{"tabindex" => -1, "role" => 'dialog', "id" => "myModal", "aria-labelledby" => "myModelLabel"}
+	%div{"class" => "modal-dialog", "role" => "document"}
+		%div{:class => "modal-content"}
+			%div{:class => "modal-header"}
+				%button{:type => "button", :class => "close", "data-dismiss" => "modal", "aria-label" => "Close"}
+					%span{"aria-hidden" => "true"}
+						&times;
+				%h4{:class => "modal-title"}
+					Edit - {{editjob.title}}
+			%div{:class => "modal-body"}
+				.row
+					.col-md-12
+						%form{"role" => "form", :novalidate => '', "ng-model" => "editjob", "name" => "editjform", "ng-submit" => "editjform.$valid && updateJob(editjob)"}
+							%input.form-control{"ng-model" => "editjob.title", "placeholder" => "Job Title", "ng-required" => "true"}
+							%br
+							%textarea.form-control{"ng-model" => "editjob.description", "placeholder" => "Description", "ng-required" => "true"}
+							%br
+							%textarea.form-control{"ng-model" => "editjob.responsibility", "placeholder" => "Responsibility", "ng-required" => "false"}
+							%br
+							.row
+								.col-md-6
+									%input.form-control{"ng-model" => "editjob.salary", "placeholder" => "Salary", "type "=> "number", "ng-required" => "true"}
+								.col-md-6
+									%input.form-control{"ng-model" => "editjob.hours", "placeholder" => "Hours", "type" => "number", "ng-required" => "true"}
+							%br
+								.row
+									.col-md-6
+										%input.form-control{"ng-model" => "editjob.lat", "ng-show" => "!eautoloc", "placeholder" => "Latitude", "type "=> "number"}
+										%p{"ng-show" => "eautoloc"}
+											Latitude - {{lat}}
+									.col-md-6
+										%input.form-control{"ng-model" => "editjob.lng", "ng-show" => "!eautoloc", "placeholder" => "Longitude", "type "=> "number"}
+										%p{"ng-show" => 'eautoloc'}
+											Longitutde - {{lng}}
+							%br
+								%input{"type" => "checkbox", "ng-click" => "etoggleLatLng()"}
+									Use My Location
+							%br
+							%input.btn.btn-danger{"type" => "submit", "ng-value" => "enjfbtnval", "ng-disabled" => "!editjform.$valid"}
+
+.container.postJob
+	.row
+		.col-md-5
+			.row
+				.col-md-7
+					%h4
+						My Companies
+				.col-md-5
+					%button.instabtn{"ng-click" => "ncf = !ncf"}
+						New Company
+			%br
+			.row{"ng-show" => "ncf"}
+				.col-md-12
+					%form{"role" => "form", :novalidate => '', "ng-model" => "newcompany", "name" => "newcform", "ng-submit" => "newcform.$valid && createCompany(newcompany)"}
+						%input.form-control{"ng-model" => "newcompany.name", "placeholder" => "Company Name", "ng-required" => "true"}
+						%br
+						%input.form-control{"ng-model" => "newcompany.url", "placeholder" => "Website", "ng-required" => "true"}
+						%br
+						%input.instabtn{"type" => "submit", "ng-value" => "ncfbtnval", "ng-disabled" => "!newcform.$valid"}
+
+			%hr
+			%input{'ng-model' => 'cname', "placeholder" => 'Search Company Name', :class => "form-control"}
+			%br
+			%div{"ng-repeat" => 'company in mycompanies | filter : cname'}
+				%a.cname{'ng-click' => "updateJobs(company)"}
+					{{company.name}}
+		.col-md-7
+			.row
+				.col-md-9
+					%h4{'ng-hide' => 'selectedc'}
+						All Jobs
+					%h4{'ng-show' => 'selectedc'}
+						My Jobs
+						%span
+							in {{selectedc.name}}
+				.col-md-3
+					%button.instabtn{"ng-click" => "njf = !njf"}
+						New Job
+			%br
+			.row{"ng-show" => "njf"}
+				.col-md-12
+					%form{"role" => "form", :novalidate => '', "ng-model" => "newjob", "name" => "newjform", "ng-submit" => "newjform.$valid && createJob(newjob)"}
+						%input.form-control{"ng-model" => "newjob.title", "placeholder" => "Job Title", "ng-required" => "true"}
+						%br
+						%textarea.form-control{"ng-model" => "newjob.description", "placeholder" => "Description", "ng-required" => "true"}
+						%br
+						%textarea.form-control{"ng-model" => "newjob.responsibility", "placeholder" => "Responsiblity", "ng-required" => "false"}
+						%br
+						.row
+							.col-md-6
+								%input.form-control{"ng-model" => "newjob.salary", "placeholder" => "Salary", "type "=> "number", "ng-required" => "true"}
+							.col-md-6
+								%input.form-control{"ng-model" => "newjob.hours", "placeholder" => "Hours", "type" => "number", "ng-required" => "true"}
+						%br
+							.row
+								.col-md-6
+									%input.form-control{"ng-model" => "newjob.lat", "ng-show" => "!autoloc", "placeholder" => "Latitude", "type "=> "number"}
+									%p{"ng-show" => "autoloc"}
+										Latitude - {{lat}}
+								.col-md-6
+									%input.form-control{"ng-model" => "newjob.lng", "ng-show" => "!autoloc", "placeholder" => "Longitude", "type "=> "number"}
+									%p{"ng-show" => 'autoloc'}
+										Longitutde - {{lng}}
+						%br
+							%input{"type" => "checkbox", "ng-click" => "toggleLatLng()"}
+								Use My Location
+						%br
+						%input.instabtn{"type" => "submit", "ng-value" => "njfbtnval", "ng-disabled" => "!newjform.$valid"}
+			%hr
+			%input{'ng-model' => 'jname', "placeholder" => 'Search Job Title', :class => "form-control"}
+			%br
+			%div.jobdiv{"ng-repeat" => 'job in showjobs track by $index | filter : jname'}
+				.row
+					.col-md-5
+						%h4.jtitle
+							{{job.title}}
+					.col-md-5
+						%p.datetime
+							Created at - {{job.created_at | date : format : timezone}}
+					.col-md-1.elink
+						%span.glyphicon.glyphicon-pencil{"ng-click" => "edit(job)", "data-toggle" => "modal", "data-target" => "#myModal"}
+					.col-md-1.elink
+						%span.glyphicon.glyphicon-trash{"ng-click" => "delete(job)"}
+				.row
+					.col-md-12
+						%p
+							Description - {{job.description}}
+				.row
+					.col-md-12
+						%p
+							Responsibility - {{job.responsibility}}
+				.row
+					.col-md-6
+						%p
+							Salary - {{job.salary}}
+					.col-md-6
+						%p
+							Hours - {{job.hours}}
+				.row
+					.col-md-6
+						%p
+							Location - Lat({{job.location[0]}}), Lng({{job.location[1]}})
+					.col-md-6
+						%p
+							Users Liked - {{job.user_ids.length}}
+				.row
+					.col-md-12
+						%a{"ui-sref" => "candidates({jobid: job._id[\"$oid\"]})", "style" => "cursor:pointer"}
+							Candidates Liked

@@ -1,0 +1,13 @@
+%div{"ng-app" => 'instajob'}
+	%div{"id" => "username", "style" => "display:none"}
+		= @user_name
+	%div{"id" => "userjobsc", "style" => "display:none"}
+		= @user_jobcount
+	%div{"id" => "userjobm", "style" => "display:none"}
+		= @matches
+	%home-nav
+
+	.container.mainContainer{"ng-controller" => 'mainCtrl'}
+		.row{'ui-view' => ''}
+
+	.container.footer

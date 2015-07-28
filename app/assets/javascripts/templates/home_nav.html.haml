@@ -1,0 +1,35 @@
+.mainNav
+	%nav.navbar{:role => 'navigation'}
+		.navbar-header
+			%a{:href => '#'}
+				%img{:src => 'assets/images/blue-logo.png'}
+			%button.navbar-toggle{'data-toggle' => 'collapse', 'data-target' => '#navbar-collapse'}
+				%span.sr-only
+					Toggle Navigation
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+		.navbar-collapse.collapse{'id' => 'navbar-collapse'}
+			%ul.nav.navbar-nav
+				%li
+					%a{'ui-sref' => 'jobsnear'}
+						Jobs Near Me
+				%li
+					%a{'ui-sref' => 'jobs'}
+						All Jobs
+				%li
+					%a{'ui-sref' => 'postjob'}
+						Post a Job
+				%li
+					%a{'ui-sref' => 'savedjobs'}
+						Saved Jobs
+				%li
+					%a{'ui-sref' => 'matches'}
+						My Matches
+			%ul.nav.navbar-nav.navbar-right
+				%li
+					%a{'ui-sref' => 'profile'}
+						{{$root.user_name}}
+				%li
+					%a{'href' => '/logout'}
+						Logout

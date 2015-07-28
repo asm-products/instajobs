@@ -1,5 +1,12 @@
 asset 'angular'
 asset 'angular-route'
-asset 'bootstrap-sass-official'
+asset 'angular-ui-router'
+asset 'bootstrap'
+asset 'angular-google-maps'
+asset 'underscore'
+asset 'lodash'
+asset 'angular-ui-slider'
+asset 'jquery-ui'
+asset 'bootstrap-social'
 
 #vim: ft=ruby

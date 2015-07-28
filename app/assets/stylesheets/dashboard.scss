@@ -1,0 +1,377 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.mainNav{
+	background-color: $nav-back;
+	button.navbar-toggle{
+		background-color: #000;
+		span.icon-bar{
+			background-color: $primary-color;
+		}
+	}
+	.navbar-collapse.collapse{
+		a{
+			cursor: pointer;
+			font-family: $font-family;
+			color: #fff;
+			// border-right: 1px solid #000;
+			&:hover{
+				color: $primary-color;
+			}
+		}
+	}
+}
+.postJob{
+	font-family: $font-family;
+	.instabtn{
+		@include button-insta($primary-color);
+	}
+	a{
+		color: $primary-color;
+	}
+	.cname{
+		cursor: pointer;
+		&:hover{
+			color: $primary-color;
+		}
+	}
+	.jobdiv{
+		@include border(#000);
+		margin-bottom: 2em;
+		padding: 1em;
+	}
+	.datetime{
+		text-transform: italic;
+		color: gray;
+		font-size: small;
+	}
+	.jtitle{
+		color: $primary-color;
+	}
+	.elink{
+		cursor: pointer;
+		&:hover{
+			color: $primary-color;
+		}
+	}
+}
+.allJobs{
+	font-family: $font-family;
+	.jobdiv{
+		@include border(#000);
+		margin: 0.5em;
+		padding: 1em;
+		min-height: 43em;
+		&:hover{
+			@include border($nav-back);
+			cursor: pointer;
+			@include shadow();
+		}
+		.title{
+			background-color: $nav-back;
+			color: #fff;
+		}
+		.more{
+			color: $primary-color;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		.info{
+			font-weight: bold;
+		}
+	}
+	.datetime{
+		text-transform: italic;
+		color: gray;
+		font-size: small;
+	}
+	@media (min-width: 992px){
+		.col-md-3 {
+		  width: 25%;
+		}
+	}
+	.like{
+		font-size: 20px;
+		background-color: $nav-back;
+		margin-top: -0.7em;
+		span{
+			margin-top: 3em;
+			cursor: pointer;
+			color: #fff;
+			background-color: $primary-color;
+			border-radius: 100%;
+			padding: 0.5em;
+		}
+		img{
+			width: 7em;
+			height: 7em;
+			border-radius: 100%;
+		}
+	}
+	.descdiv{
+		min-height: 15em;
+	}
+	.matches{
+		padding: 0;
+		padding-right: 1em;
+		border-radius: 0.2em;
+		@include button-alljobs($primary-color);
+		p{
+			float: right;
+			padding-top: 0.6em;
+		}
+	}
+	.savedjobs{
+		border-radius: 0.2em;
+		padding: 0;
+		padding-right: 1em;
+		@include button-alljobs($nav-back);
+		p{
+			float: right;
+			padding-top: 0.6em;
+		}
+	}
+	.matchescount{
+		padding-top: 0.7em;
+		height: 2.7em;
+		width: 3em;
+		color: #fff;
+		float: left;
+		margin-right: 1em;
+		background-color: $primary-color;
+	}
+	.savedjobscount{
+		padding-top: 0.7em;
+		height: 2.7em;
+		width: 3em;
+		color: #fff;
+		float: left;
+		margin-right: 1em;
+		background-color: $nav-back;	
+	}
+}
+.jobsNear{
+	.instabtn{
+		@include button-insta($primary-color);
+		padding: 0.5em;
+	}
+	font-family: $font-family;
+	.angular-google-map-container{
+		height: 60em;
+	}
+	.head{
+		.col-md-2 {
+			width: 10%;
+		}
+		.settings{
+			padding-top: 1em;
+			.col-md-2 {
+				width: 25%;
+			}	
+		}
+	}
+	.mapc{
+	}
+	.loadinggif{
+		position: absolute;
+		z-index: 89;
+		top: 50%;
+		left: 50%;
+	}
+	.matches{
+		padding: 0;
+		padding-right: 1em;
+		border-radius: 0.2em;
+		@include button-alljobs($primary-color);
+		p{
+			float: right;
+			padding-top: 0.6em;
+		}
+	}
+	.savedjobs{
+		border-radius: 0.2em;
+		padding: 0;
+		padding-right: 1em;
+		@include button-alljobs($nav-back);
+		p{
+			float: right;
+			padding-top: 0.6em;
+		}
+	}
+	.matchescount{
+		padding-top: 0.7em;
+		height: 2.7em;
+		width: 3em;
+		color: #fff;
+		float: left;
+		margin-right: 1em;
+		background-color: $primary-color;
+	}
+	.savedjobscount{
+		padding-top: 0.7em;
+		height: 2.7em;
+		width: 3em;
+		color: #fff;
+		float: left;
+		margin-right: 1em;
+		background-color: $nav-back;	
+	}
+	.mapvbtn{
+		padding: 0.5em;
+		padding-left: 0.8em;
+		padding-right: 1em;
+		margin-left: -0.3em;
+		color: #fff;
+		background-color: $nav-back;
+		border: none;
+	}
+	.listvbtn{
+		padding: 0.5em;
+		color: #fff;
+		background-color: $primary-color;
+		border: none;
+	}
+	.jobdiv{
+		@include border(#000);
+		margin: 0.5em;
+		padding: 1em;
+		min-height: 43em;
+		&:hover{
+			@include border($nav-back);
+			cursor: pointer;
+			@include shadow();
+		}
+		.title{
+			background-color: $nav-back;
+			color: #fff;
+		}
+		.more{
+			color: $primary-color;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		.info{
+			font-weight: bold;
+		}
+	}
+
+	@media (min-width: 992px){
+		.col-md-3 {
+		  width: 31%;
+		}
+	}
+	.like{
+		font-size: 20px;
+		background-color: $nav-back;
+		margin-top: -0.7em;
+		span{
+			margin-top: 3em;
+			cursor: pointer;
+			color: #fff;
+			background-color: $primary-color;
+			border-radius: 100%;
+			padding: 0.5em;
+		}
+		img{
+			width: 7em;
+			height: 7em;
+			border-radius: 100%;
+		}
+	}
+	.descdiv{
+		min-height: 15em;
+	}
+	.infowindow{
+		display: none;
+		text-transform: uppercase;
+		position: absolute;
+		top: 35%;
+		left: 70%;
+		width: 25em;
+		min-height: 30em;
+		z-index: 555989;
+		color: $nav-back;
+		padding: 0.5em 1em;
+		background-color: #fff;
+	}
+}
+.candidates{
+	.candiv{
+		@include border(#000);
+		margin: 0.5em;
+		padding: 1em;
+		min-height: 20em;
+		&:hover{
+			@include border($nav-back);
+			cursor: pointer;
+			@include shadow();
+		}
+		.title{
+			background-color: $nav-back;
+			color: #fff;
+		}
+		.like{
+			font-size: 20px;
+			background-color: $nav-back;
+			margin-top: -0.7em;
+			span{
+				margin-top: 3em;
+				cursor: pointer;
+				color: #fff;
+				background-color: $primary-color;
+				border-radius: 100%;
+				padding: 0.5em;
+			}
+			img{
+				width: 7em;
+				height: 7em;
+				border-radius: 100%;
+			}
+		}
+		.info{
+			font-weight: bold;
+		}
+	}
+}
+.singlejob{
+	.modal-header{
+		background-color: $nav-back;
+		min-height: 18em;
+		span{
+			color: #fff;
+		}
+	}
+	.like{
+		font-size: 20px;
+		background-color: $nav-back;
+		margin-top: -0.7em;
+		span{
+			margin-top: 3em;
+			cursor: pointer;
+			color: #fff;
+			background-color: $primary-color;
+			border-radius: 100%;
+			padding: 0.5em;
+		}
+		img{
+			width: 9em;
+			height: 9em;
+			border-radius: 100%;
+		}
+	}
+	.title{
+		color: #fff;
+	}
+	.modal-body{
+		.info{
+			font-weight: bold;
+		}
+	}
+}
+.profile{
+	.subbtn{
+		@include button-insta($primary-color);
+	}
+}

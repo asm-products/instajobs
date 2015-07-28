@@ -1,0 +1,82 @@
+=content_for :head do
+	%script{:type => "text/javascript", :src => "//platform.linkedin.com/in.js"}
+		api_key:   75xx0kw3b41lm5
+		authorize: false
+		lang:      en_US
+		scope: 		 r_basicprofile r_emailaddress 
+
+.mainNav	
+	%nav.navbar{:role => 'navigation'}
+		.navbar-header
+			%a{:href => '#'}
+				%img{:src => 'assets/images/blue-logo.png'}
+			%button.navbar-toggle{'data-toggle' => 'collapse', 'data-target' => '#navbar-collapse'}
+				%span.sr-only
+					Toggle Navigation
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+		.navbar-collapse.collapse{'id' => 'navbar-collapse'}
+			%ul.nav.navbar-nav.navbar-right
+				%li
+					%a{'href' => '#', "id" => "signuphref", 'class' => "selected"}
+						Sign Up
+				%li
+					%a{'href' => '#', "id" => "loginhref"}
+						Login
+.wrap
+	.loginbox
+		.signupform
+			%form
+				%input.form-control{:placeholder => 'Name', :name => "name", :required=>""}
+				%br
+				%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email",:required=>""}
+				%br
+				%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password", :required=>""}
+				%br
+				%button.submitbtn#signupbtn{}
+					Create account
+				%hr
+					%a.btn.btn-block.btn-facebook.btn-social.fblogin
+						%i{:class=> "fa fa-facebook"} 
+						Sign Up with Facebook
+					%a.btn.btn-block.btn-linkedin.btn-social.inlogin
+						%i{:class=> "fa fa-linkedin"} 
+						Sign Up with LinkedIn
+		.loginform
+			%form
+				%input.form-control{:type=>"email", :placeholder => 'Email', :name => "email", :required=>""}
+				%br
+				%input.form-control{:type=>"password", :placeholder => 'Password', :name => "password", :required=>""}
+				%br
+				%button.submitbtn#loginbtn{}
+					Sign In
+				%button.submitbtn#forgotbtn{}
+					Fogot Password
+				%hr
+					%a.btn.btn-block.btn-social.btn-facebook.fblogin
+						%i{:class=> "fa fa-facebook"}
+						Login with Facebook
+					%a.btn.btn-block.btn-social.btn-linkedin.inlogin
+						%i{:class=> "fa fa-linkedin"}
+						Login with Linkedin
+#fb-root
+%script{:type => 'text/javascript'}
+	window.fbAsyncInit = function() {
+	FB.init({
+	appId      : '1136739806342246', // App ID
+	status     : true, // check login status
+	cookie     : true, // enable cookies to allow the server to access the session
+	xfbml      : true,  // parse XFBML
+	oauth      : true,
+	version    : 'v2.4',
+	});
+	};
+	(function(d){
+	var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement('script'); js.id = id; js.async = true;
+	js.src = "//connect.facebook.net/en_US/all.js";
+	ref.parentNode.insertBefore(js, ref);
+	}(document));
+

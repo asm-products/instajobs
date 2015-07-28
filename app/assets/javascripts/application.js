@@ -12,8 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/dist/js/bootstrap
+//= require jquery-ui/ui/jquery-ui
 //= require angular/angular
-//= require angular-route/angular-route
+//= require angular-ui-router/release/angular-ui-router
+//= require lodash/lodash
+//= require angular-ui-slider/src/slider
+//= require angular-google-maps/dist/angular-google-maps
 //= require angular-rails-templates
 //= require_tree ./templates
+//= require dashboard
+//= require_tree ./angular
 //= require_tree .

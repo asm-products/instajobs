@@ -26,15 +26,20 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sprockets', '2.12.3'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
-
+gem 'unicorn'
+gem 'bourbon'
+gem 'neat'
+gem 'refills'
+gem 'font-awesome-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'haml'
 gem 'bower-rails'
 gem 'angular-rails-templates'
+gem 'protected_attributes'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -51,8 +56,11 @@ group :development, :test do
   gem "selenium-webdriver"
 end
 gem "foreman"
+gem "figaro"
+gem "geocoder"
 group :production, :staging do 
   gem "rails_12factor"
   gem "rails_stdout_logging"
   gem "rails_serve_static_assets"
 end
+

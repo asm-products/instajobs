@@ -1,0 +1,63 @@
+.wrap{
+	background: url("images/header.jpg") no-repeat center center fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-postion: center center;
+	width: auto;
+	margin-top: -1.5em;
+	height: 43.5em;
+}
+.loginbox{
+	min-width: 43.15em;
+	width: 43.15em;
+	@include outer-container;
+	.fblogin{
+		padding: 1em 1em 1em 0.5em;
+	}
+	.inlogin{
+		padding: 1em 1em 1em 0.5em;
+	}
+	.btn-social > :first-child{
+		padding-top: 0.3em;
+	}
+	.signupform{
+		padding: 3em;
+		.form-control::-webkit-input-placeholder{
+			font-family: $font_family;
+		}
+		.form-control::-moz-placeholder{
+			font-family: $font_family;
+		}
+		.form-control::-ms-input-placeholder{
+			font-family: $font_family;
+		}
+		.form-control::placeholder{
+			font-family: $font_family;
+		}
+		.submitbtn{
+			@include button-insta($primary_color);
+		}
+	}
+	.loginform{
+		display: none;
+		padding: 3em;
+		.form-control::-webkit-input-placeholder{
+			font-family: $font_family;
+		}
+		.form-control::-moz-placeholder{
+			font-family: $font_family;
+		}
+		.form-control::-ms-input-placeholder{
+			font-family: $font_family;
+		}
+		.form-control::placeholder{
+			font-family: $font_family;
+		}
+		.submitbtn{
+			@include button-insta($primary_color);
+		}
+	}
+	#forgotbtn{
+		float: right;
+	}
+}
