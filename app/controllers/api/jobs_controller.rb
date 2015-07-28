@@ -18,8 +18,17 @@ class Api::JobsController < ApplicationController
 			lng = params[:lng]
 			radius = params[:radius]
 			@jobs = Job.geo_near([lat.to_f, lng.to_f]).max_distance(radius.to_f)
+			render :json => {jobs: @jobs, address: Geocoder.address([lat.to_f, lng.to_f])}
+			return
+		elsif params.include?(:address)
+			address = params[:address]
+			lat, lng = Geocoder.coordinates(address);
+			radius = params[:radius]
+			@jobs = Job.geo_near([lat.to_f, lng.to_f]).max_distance(radius.to_f)
+			render :json => {jobs: @jobs, lat: lat, lng: lng}
+			return
 		end
-		render :json => @jobs
+		render :json => {result: "no params match"}
 	end
 
 	def show

@@ -152,6 +152,10 @@
 	}
 }
 .jobsNear{
+	.instabtn{
+		@include button-insta($primary-color);
+		padding: 0.5em;
+	}
 	font-family: $font-family;
 	.angular-google-map-container{
 		height: 60em;
@@ -286,7 +290,7 @@
 		top: 25%;
 		left: 70%;
 		width: 25em;
-		height: 30em;
+		min-height: 30em;
 		z-index: 555989;
 		color: $nav-back;
 		padding: 0.5em 1em;

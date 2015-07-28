@@ -4,6 +4,7 @@ do ->
 		$scope.loading = true;
 		$scope.lat = null;
 		$scope.lng = null;
+		$scope.address = null;
 		$scope.jobs = null;
 		$scope.radius = 5;
 		$scope.selectedj = null;
@@ -22,7 +23,8 @@ do ->
 			$scope.$apply();
 			$http({url: "/api/jobs", method: "GET", params : {lat: $scope.lat, lng: $scope.lng, radius: $scope.radius}}).then (response) ->
 				$scope.loading = false;
-				$scope.jobs = response.data;
+				$scope.jobs = response.data.jobs;
+				$scope.address = response.data.address;
 				initailizeMap();
 			return true
 
@@ -62,7 +64,7 @@ do ->
 		  	$scope.loading = true;
 		  	$http({url: "/api/jobs", method: "GET", params : {lat: $scope.lat, lng: $scope.lng, radius: $scope.radius}}).then (response) ->
 						$scope.loading = false;
-						$scope.jobs = response.data;
+						$scope.jobs = response.data.jobs;
 						initailizeMap();
 
 		$scope.markersEvents = 
@@ -93,7 +95,16 @@ do ->
 
 		$scope.gomatches = () ->
 			$state.go("matches")
-		$scope.gosavedjobs = ()->
+		$scope.gosavedjobs = () ->
 			$state.go("savedjobs")
+
+		$scope.findJobs = () ->
+	  	$scope.loading = true;$http({url: "/api/jobs", method: "GET", params : {address: $scope.address, radius: $scope.radius}}).then (response) ->
+															$scope.loading = false;
+															$scope.jobs = response.data.jobs;
+															$scope.lat = response.data.lat;
+															$scope.lng = response.data.lng;
+															initailizeMap();
+		return
 	]
 	return
