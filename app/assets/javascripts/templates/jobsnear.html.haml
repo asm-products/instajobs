@@ -78,7 +78,10 @@
 						Radius - {{radius}}
 				.col-md-9
 					%div{"ui-slider" => "slider.options", "min" => 5, "max" => "100", "ng-model" => "radius"}
-
+	.row.text-center{"ng-if" => "!jobs"}
+		.col-md-12
+			%h5
+				No jobs nearby, increase the radius
 	.container
 		.row{"ng-if" => "mapv"}
 			%ui-gmap-google-map{"center" => 'map.center', "zoom" => 'map.zoom'}
