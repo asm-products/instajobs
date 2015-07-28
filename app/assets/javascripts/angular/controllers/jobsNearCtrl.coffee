@@ -10,6 +10,7 @@ do ->
 		$scope.selectedj = null;
 		$scope.mapv = false;
 		$scope.infowindowjob = null;
+		$scope.mapzoom = 12;
 
 		getLatLng = () ->
 			if(navigator.geolocation)
@@ -31,7 +32,7 @@ do ->
 		getLatLng();
 
 		initailizeMap = () ->
-			$scope.map = { center: { latitude: $scope.lat, longitude: $scope.lng }, zoom: 12 };
+			$scope.map = { center: { latitude: $scope.lat, longitude: $scope.lng }, zoom: $scope.mapzoom };
 			$scope.marker = {
 				id: 0,
 				coords: {
