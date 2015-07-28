@@ -32,6 +32,7 @@ class HomeController < ApplicationController
   		@u.password = SecureRandom.hex(6)
   		@u.facebook_profile = FacebookProfile.new(:uid => fbparam[:id], :access_token => fbparam[:access_token])
   		newsignup = true
+      @u.jobmatches = []
   	end
   	if @u.save
   		if newsignup
@@ -59,6 +60,7 @@ class HomeController < ApplicationController
       @u.password = SecureRandom.hex(6)
       @u.linked_in_profile = LinkedInProfile.new(:uid => inparam[:id], :first_name => inparam[:firstName], :last_name => inparam[:lastName])
       newsignup = true
+      @u.jobmatches = []
     end
     if @u.save
       if newsignup
